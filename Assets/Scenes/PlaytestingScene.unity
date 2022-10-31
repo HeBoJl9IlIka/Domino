@@ -45588,6 +45588,7 @@ GameObject:
   - component: {fileID: 1814365774}
   - component: {fileID: 1814365776}
   - component: {fileID: 1814365775}
+  - component: {fileID: 1814365777}
   m_Layer: 0
   m_Name: Truck
   m_TagString: Untagged
@@ -45603,7 +45604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814365773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.13, y: 1, z: -4.04}
+  m_LocalPosition: {x: -34.54, y: 1, z: -28.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45639,10 +45640,30 @@ BoxCollider:
   m_GameObject: {fileID: 1814365773}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4.44, y: 1, z: 4.01}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1814365777
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814365773}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e799a5e6d29c0654c9110dd13b0184c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1814586121 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3273207122511570298, guid: f37a0973ea7f1354dbc0f027c0e7cdf4, type: 3}
