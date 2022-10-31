@@ -1,33 +1,20 @@
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
-[RequireComponent(typeof(PlayerDropDomino))]
-[RequireComponent(typeof(PlayerTakingDomino))]
+[RequireComponent(typeof(Player))]
 public class PlayerWeightIK : MonoBehaviour
 {
     [SerializeField] private RigBuilder _rigBuilder;
-    [SerializeField] private PlayerDropDomino _playerDropDomino;
-    [SerializeField] private PlayerTakingDomino _playerTakingDomino;
-    
-    private void OnEnable()
+
+    private Player _player;
+
+    private void Start()
     {
-        _playerDropDomino.Droped += OnDroped;
-        _playerTakingDomino.Taked += OnTaked;
+        _player = GetComponent<Player>();
     }
 
-    private void OnDisable()
+    private void Update()
     {
-        _playerDropDomino.Droped -= OnDroped;
-        _playerTakingDomino.Taked -= OnTaked;
-    }
-
-    private void OnDroped()
-    {
-        _rigBuilder.enabled = false;
-    }
-
-    private void OnTaked()
-    {
-        _rigBuilder.enabled = true;
+        _rigBuilder.enabled = _player.IsFull;
     }
 }

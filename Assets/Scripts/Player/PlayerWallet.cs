@@ -7,6 +7,7 @@ public class PlayerWallet : MonoBehaviour
     private const int MoneyStep = 2;
 
     [SerializeField] PointDomino[] _dominos;
+    [SerializeField] Truck _truck;
 
     private int _money;
 
@@ -21,17 +22,17 @@ public class PlayerWallet : MonoBehaviour
     private void OnEnable()
     {
         foreach (PointDomino domino in _dominos)
-        {
             domino.Showed += OnShowed;
-        }
+
+        _truck.Loaded += OnLoaded;
     }
 
     private void OnDisable()
     {
         foreach (PointDomino domino in _dominos)
-        {
             domino.Showed -= OnShowed;
-        }
+
+        _truck.Loaded -= OnLoaded;
     }
 
     public bool TryBuy(int price)
@@ -48,7 +49,12 @@ public class PlayerWallet : MonoBehaviour
         return isBought;
     }
 
-    private void OnShowed(int price, int moneySpawnCount)
+    private void OnShowed(int price)
+    {
+        StartCoroutine(Add(price));
+    }
+    
+    private void OnLoaded(int price)
     {
         StartCoroutine(Add(price));
     }

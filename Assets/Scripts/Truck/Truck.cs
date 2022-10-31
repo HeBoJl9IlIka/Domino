@@ -1,17 +1,28 @@
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
-[RequireComponent(typeof(TruckMovementAnimation))]
 public class Truck : MonoBehaviour
 {
-    private TruckMovementAnimation _truckMovement;
+    [SerializeField] private AnimationMovingDomino[] _domino;
+    [SerializeField] private int _price;
 
-    private void Start()
+    public event UnityAction<int> Loaded;
+
+    private void OnTriggerEnter(Collider other)
     {
-        _truckMovement = GetComponent<TruckMovementAnimation>();
-    }
+        if (other.TryGetComponent(out Player player))
+        {
+            if (player.IsFull == false)
+                return;
 
-    public void Act()
-    {
+            AnimationMovingDomino domino = _domino.FirstOrDefault(domino => domino.gameObject.activeSelf == false);
 
+            if(domino != null)
+            {
+                domino.gameObject.SetActive(true);
+                Loaded?.Invoke(_price);
+            }
+        }
     }
 }

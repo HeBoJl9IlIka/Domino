@@ -54,7 +54,7 @@ public class DominoPlace : MonoBehaviour
         }
     }
 
-    private void OnShowed(int price, int moneySpawnCount)
+    private void OnShowed(int price)
     {
         ShowTarget();
     }
