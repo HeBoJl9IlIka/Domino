@@ -1,13 +1,23 @@
 using UnityEngine;
 
+[RequireComponent(typeof(RobotTakingOre))]
+[RequireComponent(typeof(RobotDropOre))]
 public class Robot : MonoBehaviour
 {
     [SerializeField] private GameObject _ore;
 
-    [SerializeField] private RobotTakingOre _takingOre;
-    [SerializeField] private RobotDropOre _dropedOre;
+    private RobotTakingOre _takingOre;
+    private RobotDropOre _dropedOre;
+    private Vector3 _defaultPosition;
 
     public bool IsFull { get; private set; }
+
+    private void Awake()
+    {
+        _takingOre = GetComponent<RobotTakingOre>();
+        _dropedOre = GetComponent<RobotDropOre>();
+        _defaultPosition = new Vector3(1.5f, 0.5f, 0);
+    }
 
     private void OnEnable()
     {
