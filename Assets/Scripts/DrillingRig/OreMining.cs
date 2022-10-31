@@ -1,16 +1,17 @@
-using System;
 using System.Linq;
 using UnityEngine;
 
 public class OreMining : MonoBehaviour
 {
     private const float _upgradingSpawn = 0.2f;
+    private const float _minTimeSpawn = 2f;
 
-    [SerializeField] private UpgradingDrillingRig _upgradingDrillingRig;
     [SerializeField] private OreAnimator[] _ores;
     [SerializeField] private float _delaySpawnOre;
 
     private float _time;
+
+    public bool IsMaxUpgrade => _delaySpawnOre <= _minTimeSpawn;
 
     private void Update()
     {
@@ -28,18 +29,11 @@ public class OreMining : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    public void Upgrade()
     {
-        _upgradingDrillingRig.Upgraded += OnUpgraded;
-    }
+        if (IsMaxUpgrade)
+            return;
 
-    private void OnDisable()
-    {
-        _upgradingDrillingRig.Upgraded -= OnUpgraded;
-    }
-
-    private void OnUpgraded()
-    {
         _delaySpawnOre -= _upgradingSpawn;
     }
 }

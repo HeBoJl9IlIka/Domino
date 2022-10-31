@@ -1,11 +1,14 @@
 using UnityEngine;
+using UnityEngine.Events;
 
-public class FactoryWarehouse : MonoBehaviour
+public class DominoFactoryWarehouse : MonoBehaviour
 {
     [SerializeField] private RobotDropOre[] _robotsDropOre;
-    [SerializeField] private FactoryProduction _factoryProduction;
+    [SerializeField] private DominoFactoryProduction _factoryProduction;
 
     public uint OreCount { get; private set; }
+
+    public event UnityAction<uint> Loaded;
 
     private void OnEnable()
     {
@@ -30,6 +33,7 @@ public class FactoryWarehouse : MonoBehaviour
     private void OnDroped()
     {
         ++OreCount;
+        Loaded?.Invoke(OreCount);
     }
 
     private void OnProduced(int needAmount)

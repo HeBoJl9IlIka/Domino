@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UpgradingDrillingRig : MonoBehaviour
+public class DominoFactoryUpgrade : MonoBehaviour
 {
-    [SerializeField] private OreMining _oreMining;
+    [SerializeField] private DominoFactoryProduction _factory;
     [SerializeField] private GameObject _icon;
     [SerializeField] private int _price;
 
@@ -23,7 +23,7 @@ public class UpgradingDrillingRig : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_oreMining.IsMaxUpgrade == false)
+        if (_factory.IsMaxUpgrade == false)
         {
             if (other.TryGetComponent(out PlayerWallet player))
             {
@@ -31,10 +31,10 @@ public class UpgradingDrillingRig : MonoBehaviour
                 {
                     _price += _priceStep;
                     _confetti.Play();
-                    _oreMining.Upgrade();
+                    _factory.Upgrade();
                     Upgraded?.Invoke(_price);
 
-                    if (_oreMining.IsMaxUpgrade)
+                    if (_factory.IsMaxUpgrade)
                     {
                         FullUpgraded?.Invoke();
                         _icon.SetActive(false);

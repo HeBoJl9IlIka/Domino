@@ -1,9 +1,9 @@
 using TMPro;
 using UnityEngine;
 
-public class PriceUpgradingRobotFactory : MonoBehaviour
+public class RobotFactoryUpgradingPrice : MonoBehaviour
 {
-    [SerializeField] private RobotFactoryUpgrade _robotFactory;
+    [SerializeField] private RobotFactoryUpgrade _factory;
 
     private TMP_Text _price;
 
@@ -14,14 +14,14 @@ public class PriceUpgradingRobotFactory : MonoBehaviour
 
     private void OnEnable()
     {
-        _robotFactory.Upgraded += OnUpgraded;
-        _robotFactory.FullUpgraded += OnFullUpgraded;
+        _factory.Upgraded += OnUpgraded;
+        _factory.FullUpgraded += OnFullUpgraded;
     }
 
     private void OnDisable()
     {
-        _robotFactory.Upgraded -= OnUpgraded;
-        _robotFactory.FullUpgraded -= OnFullUpgraded;
+        _factory.Upgraded -= OnUpgraded;
+        _factory.FullUpgraded -= OnFullUpgraded;
     }
     
     private void OnUpgraded(int price)

@@ -2,17 +2,24 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class FactoryProduction : MonoBehaviour
+public class DominoFactoryProduction : MonoBehaviour
 {
-    private const int _needAmount = 2;
-
-    [SerializeField] private FactoryWarehouse _factoryWarehouse;
+    [SerializeField] private DominoFactoryWarehouse _factoryWarehouse;
     [SerializeField] private DominoSpawning[] _dominos;
     [SerializeField] private float _delaySpawnDomino;
+    [SerializeField] private int _needAmount;
 
     private float _time;
 
+    public int NeedAmount => _needAmount;
+    public bool IsMaxUpgrade => _needAmount == 1;
+
     public event UnityAction<int> Produced;
+
+    public void Upgrade()
+    {
+        --_needAmount;
+    }
 
     private void Update()
     {
