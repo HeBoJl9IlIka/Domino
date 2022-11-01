@@ -4,10 +4,23 @@ using UnityEngine.Events;
 
 public class Truck : MonoBehaviour
 {
-    [SerializeField] private AnimationMovingDomino[] _domino;
+    private const int MaxDistanceX = 78;
+
+    [SerializeField] private AnimationMovingDomino[] _dominos;
     [SerializeField] private int _price;
 
     public event UnityAction<int> Loaded;
+
+    private void Update()
+    {
+        if (transform.position.x >= MaxDistanceX)
+        {
+            foreach (var domino in _dominos)
+                domino.gameObject.SetActive(false);
+
+            gameObject.SetActive(false);
+        }   
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +29,7 @@ public class Truck : MonoBehaviour
             if (player.IsFull == false)
                 return;
 
-            AnimationMovingDomino domino = _domino.FirstOrDefault(domino => domino.gameObject.activeSelf == false);
+            AnimationMovingDomino domino = _dominos.FirstOrDefault(domino => domino.gameObject.activeSelf == false);
 
             if(domino != null)
             {
