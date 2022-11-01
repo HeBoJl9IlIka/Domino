@@ -30,4 +30,12 @@ public class PointDomino : MonoBehaviour
         _domino.SetActive(true);
         Showed?.Invoke(_price);
     }
+    
+    public void HideDomino()
+    {
+        IsIndicates = true;
+        IsActive = false;
+        _pointer.SetActive(true);
+        _domino.SetActive(false);
+    }
 }
