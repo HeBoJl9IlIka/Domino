@@ -33,9 +33,13 @@ public class PointDomino : MonoBehaviour
     
     public void HideDomino()
     {
-        IsIndicates = true;
         IsActive = false;
-        _pointer.SetActive(true);
+        _pointer.SetActive(false);
         _domino.SetActive(false);
+    }
+
+    public void HidePointer()
+    {
+        _pointer.SetActive(false);
     }
 }

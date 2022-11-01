@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public class DominoPlace : MonoBehaviour
 {
+    [SerializeField] private Thief _thief;
     [SerializeField] private PointDomino[] _points;
 
     public Transform Target { get; private set; }
@@ -18,17 +19,17 @@ public class DominoPlace : MonoBehaviour
     private void OnEnable()
     {
         foreach (PointDomino pointDomino in _points)
-        {
             pointDomino.Showed += OnShowed;
-        }
+
+        _thief.Stolen += OnStolen;
     }
 
     private void OnDisable()
     {
         foreach (PointDomino pointDomino in _points)
-        {
             pointDomino.Showed -= OnShowed;
-        }
+
+        _thief.Stolen -= OnStolen;
     }
 
     public void ShowDomino()
@@ -56,6 +57,14 @@ public class DominoPlace : MonoBehaviour
 
     private void OnShowed(int price)
     {
+        ShowTarget();
+    }
+
+    private void OnStolen()
+    {
+        foreach (PointDomino pointDomino in _points)
+            pointDomino.HidePointer();
+
         ShowTarget();
     }
 }
