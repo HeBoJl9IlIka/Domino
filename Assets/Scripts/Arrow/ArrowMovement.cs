@@ -11,4 +11,9 @@ public class ArrowMovement : MonoBehaviour
 
         transform.position = new Vector3(_playerMovement.transform.position.x, 0, _playerMovement.transform.position.z);
     }
+
+    private void OnEnable()
+    {
+        transform.position = new Vector3(_playerMovement.transform.position.x, 0, _playerMovement.transform.position.z);
+    }
 }
