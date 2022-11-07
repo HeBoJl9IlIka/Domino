@@ -11,11 +11,10 @@ public class Thief : MonoBehaviour
 
     private ThiefSpawn _thiefSpawn;
     private ThiefMovement _thiefMovement;
-    private ThiefAnimator _thiefAnimator;
     private Domino _domino;
-    private bool _isKicked;
 
     public bool IsTookDomino { get; private set; }
+    public bool IsKicked { get; private set; }
     public bool DominoIsReady => _inactiveDomino.gameObject.activeSelf == false;
 
     public event UnityAction Stolen;
@@ -24,7 +23,6 @@ public class Thief : MonoBehaviour
     {
         _thiefSpawn = GetComponentInParent<ThiefSpawn>();
         _thiefMovement = GetComponent<ThiefMovement>();
-        _thiefAnimator = GetComponent<ThiefAnimator>();
         _domino = GetComponentInChildren<Domino>();
 
         gameObject.SetActive(false);
@@ -32,18 +30,18 @@ public class Thief : MonoBehaviour
 
     private void Update()
     {
-        if ((IsTookDomino) || (_isKicked))
+        if ((IsTookDomino) || (IsKicked))
             if (_thiefMovement.IsEscaped)
             {
                 gameObject.SetActive(false);
-                _isKicked = false;
+                IsKicked = false;
                 IsTookDomino = false;
             }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_isKicked == false)
+        if (IsKicked == false)
         {
             if (other.TryGetComponent(out Player player))
             {
@@ -53,10 +51,10 @@ public class Thief : MonoBehaviour
                     IsTookDomino = false;
                 }
 
-                _isKicked = true;
                 _domino.gameObject.SetActive(false);
                 _smokeKick.Play();
                 Escape();
+                IsKicked = true;
             }
         }
 

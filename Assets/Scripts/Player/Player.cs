@@ -2,6 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerTakingDomino))]
 [RequireComponent(typeof(PlayerDropDomino))]
+[RequireComponent(typeof(PlayerAnimator))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private Truck _truck;
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
     private Domino _domino;
     private PlayerTakingDomino _playerTakingDomino;
     private PlayerDropDomino _playerDropDomino;
+    private PlayerAnimator _playerAnimator;
 
     public bool IsFull { get; private set; }
 
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
         _domino = GetComponentInChildren<Domino>();
         _playerTakingDomino = GetComponent<PlayerTakingDomino>();
         _playerDropDomino = GetComponent<PlayerDropDomino>();
+        _playerAnimator = GetComponent<PlayerAnimator>();
 
         _domino.gameObject.SetActive(false);
     }
@@ -33,6 +36,12 @@ public class Player : MonoBehaviour
         _playerTakingDomino.Taked -= OnTaked;
         _playerDropDomino.Droped -= OnDroped;
         _truck.Loaded -= OnLoaded;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Thief thief))
+            _playerAnimator.Slam();
     }
 
     private void OnTaked()
