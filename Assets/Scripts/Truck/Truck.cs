@@ -10,6 +10,8 @@ public class Truck : MonoBehaviour
     [SerializeField] private int _price;
 
     public event UnityAction<int> Loaded;
+    public event UnityAction Enabled;
+    public event UnityAction Disabled;
 
     private void Update()
     {
@@ -20,6 +22,16 @@ public class Truck : MonoBehaviour
 
             gameObject.SetActive(false);
         }   
+    }
+
+    private void OnEnable()
+    {
+        Enabled?.Invoke();
+    }
+
+    private void OnDisable()
+    {
+        Disabled?.Invoke();
     }
 
     private void OnTriggerEnter(Collider other)

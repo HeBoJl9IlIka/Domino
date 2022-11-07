@@ -18,6 +18,8 @@ public class Thief : MonoBehaviour
     public bool DominoIsReady => _inactiveDomino.gameObject.activeSelf == false;
 
     public event UnityAction Stolen;
+    public event UnityAction Enabled;
+    public event UnityAction Disabled;
 
     private void Start()
     {
@@ -37,6 +39,16 @@ public class Thief : MonoBehaviour
                 IsKicked = false;
                 IsTookDomino = false;
             }
+    }
+
+    private void OnEnable()
+    {
+        Enabled?.Invoke();
+    }
+
+    private void OnDisable()
+    {
+        Disabled?.Invoke();
     }
 
     private void OnTriggerEnter(Collider other)

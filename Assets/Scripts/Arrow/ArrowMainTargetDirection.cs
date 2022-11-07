@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ArrowDirecting : MonoBehaviour
+public class ArrowMainTargetDirection : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private DominoPlace _dominoPlace;
