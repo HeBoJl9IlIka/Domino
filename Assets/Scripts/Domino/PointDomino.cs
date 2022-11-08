@@ -8,12 +8,11 @@ public class PointDomino : MonoBehaviour
     [SerializeField] private ParticleSystem _dust;
     [SerializeField] private ParticleSystem _money;
     [SerializeField] private int _price;
-    [SerializeField] private int _moneySpawnCount;
 
     public bool IsActive { get; private set; }
     public bool IsIndicates { get; private set; }
 
-    public event UnityAction<int, int> Showed;
+    public event UnityAction<int> Showed;
 
     public void ShowPointer()
     {
@@ -29,6 +28,18 @@ public class PointDomino : MonoBehaviour
         _money.Play();
         _pointer.SetActive(false);
         _domino.SetActive(true);
-        Showed?.Invoke(_price, _moneySpawnCount);
+        Showed?.Invoke(_price);
+    }
+    
+    public void HideDomino()
+    {
+        IsActive = false;
+        _pointer.SetActive(false);
+        _domino.SetActive(false);
+    }
+
+    public void HidePointer()
+    {
+        _pointer.SetActive(false);
     }
 }

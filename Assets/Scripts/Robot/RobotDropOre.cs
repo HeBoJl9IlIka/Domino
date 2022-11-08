@@ -15,7 +15,7 @@ public class RobotDropOre : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out FactoryWarehouse factoryWarehouse))
+        if(other.TryGetComponent(out DominoFactoryWarehouse factoryWarehouse))
         {
             if(_robot.IsFull)
                 Droped?.Invoke();

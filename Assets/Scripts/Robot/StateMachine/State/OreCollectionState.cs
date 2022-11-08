@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 public class OreCollectionState : State
@@ -15,8 +14,14 @@ public class OreCollectionState : State
 
     private void Update()
     {
-        if(_isBusy == false)
-            _ore = _ores.FirstOrDefault(ore => ore.gameObject.activeSelf == true);
+        if (_isBusy == false)
+            _ore = _ores[Random.Range(0, _ores.Length)];
+
+        if (_ore.gameObject.activeSelf == false)
+        {
+            _isBusy = false;
+            return;
+        }
 
         if (_ore != null)
         {

@@ -3,24 +3,43 @@ using UnityEngine.Events;
 
 public class UpgradingDrillingRig : MonoBehaviour
 {
-    private const int _price = 300;
+    [SerializeField] private OreMining _oreMining;
+    [SerializeField] private GameObject _icon;
+    [SerializeField] private int _price;
 
-    [SerializeField] private PlayerWallet _playerWallet;
-    [SerializeField] private ParticleSystem _confetti;
-    [SerializeField] private GameObject _message;
+    private ParticleSystem _confetti;
+    private int _priceStep;
 
-    public event UnityAction Upgraded;
+    public event UnityAction<int> Upgraded;
+    public event UnityAction FullUpgraded;
+
+    private void Awake()
+    {
+        _confetti = GetComponentInChildren<ParticleSystem>();
+        _priceStep = _price;
+
+        Upgraded?.Invoke(_price);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Player player))
+        if (_oreMining.IsMaxUpgrade == false)
         {
-            if (_playerWallet.TryBuy(_price))
+            if (other.TryGetComponent(out PlayerWallet player))
             {
-                Upgraded?.Invoke();
-                _confetti.Play();
-                gameObject.SetActive(false);
-                _message.SetActive(false);
+                if (player.TryBuy(_price))
+                {
+                    _price += _priceStep;
+                    _confetti.Play();
+                    _oreMining.Upgrade();
+                    Upgraded?.Invoke(_price);
+
+                    if (_oreMining.IsMaxUpgrade)
+                    {
+                        FullUpgraded?.Invoke();
+                        _icon.SetActive(false);
+                    }
+                }
             }
         }
     }

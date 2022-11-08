@@ -24,5 +24,14 @@ public class PlayerTakingDomino : MonoBehaviour
             domino.gameObject.SetActive(false);
             domino.Reset();
         }
+
+        if (collision.collider.TryGetComponent(out DominoThief dominoThief))
+        {
+            if (_player.IsFull)
+                return;
+
+            Taked?.Invoke();
+            dominoThief.gameObject.SetActive(false);
+        }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour
 {
     private const string IsMoving = "IsMoving";
+    private const string Kick = "Kick";
 
     [SerializeField] private Joystick _joystick;
     [SerializeField] private Animator _animator;
@@ -18,5 +19,10 @@ public class PlayerAnimator : MonoBehaviour
     private void Update()
     {
         _animator.SetBool(IsMoving, _playerMovement.IsMoving & _joystick.IsPressed);
+    }
+
+    public void Slam()
+    {
+        _animator.SetTrigger(Kick);
     }
 }

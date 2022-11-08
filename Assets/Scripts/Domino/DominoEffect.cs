@@ -1,11 +1,18 @@
 using UnityEngine;
 
+[RequireComponent(typeof(DominoPlace))]
 public class DominoEffect : MonoBehaviour
 {
-    [SerializeField] private DominoPlace _dominoPlace;
     [SerializeField] private Rigidbody[] _dominos;
     [SerializeField] private Rigidbody _firstDomino;
     [SerializeField] private float _speed;
+
+    private DominoPlace _dominoPlace;
+
+    private void Awake()
+    {
+        _dominoPlace = GetComponent<DominoPlace>();    
+    }
 
     private void OnEnable()
     {
@@ -25,9 +32,7 @@ public class DominoEffect : MonoBehaviour
     private void Launch()
     {
         foreach (var domino in _dominos)
-        {
             domino.isKinematic = false;
-        }
 
         _firstDomino.AddRelativeForce(Vector3.left * _speed * Time.deltaTime, ForceMode.VelocityChange);
     }
