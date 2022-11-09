@@ -74,11 +74,14 @@ public class Thief : MonoBehaviour
         {
             if (other.TryGetComponent(out PointDomino pointDomino))
             {
-                pointDomino.HideDomino();
-                _domino.gameObject.SetActive(true);
-                IsTookDomino = true;
-                Stolen?.Invoke();
-                Escape();
+                if (pointDomino.IsActive)
+                {
+                    pointDomino.HideDomino();
+                    _domino.gameObject.SetActive(true);
+                    IsTookDomino = true;
+                    Stolen?.Invoke();
+                    Escape();
+                }
             }
         }
     }
