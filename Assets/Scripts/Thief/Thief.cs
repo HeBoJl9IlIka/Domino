@@ -48,6 +48,7 @@ public class Thief : MonoBehaviour
 
     private void OnDisable()
     {
+        _thiefMovement.SpeedDown();
         Disabled?.Invoke();
     }
 
@@ -66,6 +67,7 @@ public class Thief : MonoBehaviour
                 _domino.gameObject.SetActive(false);
                 _smokeKick.Play();
                 Escape();
+                _thiefMovement.SpeedUp();
                 IsKicked = true;
             }
         }

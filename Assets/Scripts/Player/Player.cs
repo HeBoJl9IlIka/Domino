@@ -2,6 +2,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerTakingDomino))]
 [RequireComponent(typeof(PlayerDropDomino))]
+[RequireComponent(typeof(PlayerTakingOre))]
+[RequireComponent(typeof(PlayerDroppingOre))]
 [RequireComponent(typeof(PlayerAnimator))]
 public class Player : MonoBehaviour
 {
