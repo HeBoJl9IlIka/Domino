@@ -5318,9 +5318,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 370994033}
-  - component: {fileID: 370994036}
-  - component: {fileID: 370994035}
-  - component: {fileID: 370994034}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -5345,69 +5342,6 @@ Transform:
   m_Father: {fileID: 785270984}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &370994034
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370994032}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &370994035
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370994032}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 95d3811419a4bf647843107bb811a6ff, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &370994036
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370994032}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &386569555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5600,7 +5534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397281456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.56, y: 1, z: 6.08}
+  m_LocalPosition: {x: -0.65, y: 1, z: 3.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5618,7 +5552,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.442857, y: 1, z: 4.2832904}
+  m_Size: {x: 3, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &397281459
 MonoBehaviour:
@@ -10638,7 +10572,7 @@ GameObject:
   m_Name: Conveyor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &654118656
@@ -12438,7 +12372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842542802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.1, y: 1, z: -7.7}
+  m_LocalPosition: {x: -4.06, y: 1, z: -8.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16137,7 +16071,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089115019}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.5, y: 0.505, z: -3.56}
+  m_LocalPosition: {x: -0.5, y: 0.505, z: -4.93}
   m_LocalScale: {x: 3.7, y: 3.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18151,6 +18085,10 @@ PrefabInstance:
       value: cosmetic_shop_mobile
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 0df139a6d6e9432488af463eb75a9fa3, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0df139a6d6e9432488af463eb75a9fa3, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -19173,7 +19111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -177, y: -98.9}
+  m_AnchoredPosition: {x: -170.8, y: -96.4}
   m_SizeDelta: {x: 91, y: 84.86603}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1275721869
@@ -30187,6 +30125,10 @@ PrefabInstance:
       value: cosmetic_laboratory_mobile
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cc14922938b3e2d47acd7d8602db71aa, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cc14922938b3e2d47acd7d8602db71aa, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -30943,6 +30885,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6be4e04bd9cc5904a9d055d1732cab64, type: 3}
       propertyPath: m_Name
       value: electronic_store_mobile
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6be4e04bd9cc5904a9d055d1732cab64, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6be4e04bd9cc5904a9d055d1732cab64, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -31989,7 +31935,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759229527}
   m_LocalRotation: {x: 0.17298737, y: 0.085831694, z: -0.015134441, w: 0.98106027}
-  m_LocalPosition: {x: 0, y: 0, z: -0.63}
+  m_LocalPosition: {x: 0, y: 0, z: -2.082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35963,6 +35909,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0df139a6d6e9432488af463eb75a9fa3, type: 3}
       propertyPath: m_Name
       value: cosmetic_shop_mobile (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0df139a6d6e9432488af463eb75a9fa3, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 0df139a6d6e9432488af463eb75a9fa3, type: 3}
       propertyPath: m_StaticEditorFlags

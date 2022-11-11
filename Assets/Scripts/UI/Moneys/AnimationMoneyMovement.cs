@@ -12,6 +12,7 @@ public class AnimationMoneyMovement : MonoBehaviour
     [SerializeField] private float _duration;
 
     private RectTransform _transform;
+    private Sequence _sequence;
     private float _delay;
 
     private bool _isPlaying => _transform.position != _targetPosition.position;
@@ -20,7 +21,7 @@ public class AnimationMoneyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (_isPlaying)
+        if (_sequence.IsActive())
             return;
 
         Played?.Invoke();
@@ -32,10 +33,10 @@ public class AnimationMoneyMovement : MonoBehaviour
         _delay = Random.Range(0, _maxDelay);
         _transform = GetComponent<RectTransform>();
 
-        Sequence sequence = DOTween.Sequence();
+        _sequence = DOTween.Sequence();
 
-        sequence.Append(_transform.DOMove(_firstPosition.position, _duration).SetDelay(_delay));
-        sequence.Append(_transform.DOMove(_targetPosition.position, _duration).SetDelay(_delay));
+        _sequence.Append(_transform.DOMove(_firstPosition.position, _duration).SetDelay(_delay));
+        _sequence.Append(_transform.DOMove(_targetPosition.position, _duration).SetDelay(_delay));
     }
 
     private void OnDisable()

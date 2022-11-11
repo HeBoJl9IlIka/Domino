@@ -15,7 +15,7 @@ public class Truck : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.x >= MaxDistanceX)
+        if (transform.localPosition.x >= MaxDistanceX)
         {
             foreach (var domino in _dominos)
                 domino.gameObject.SetActive(false);
