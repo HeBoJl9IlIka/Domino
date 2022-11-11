@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TruckSpawnTime : MonoBehaviour
 {
-    private const float Delay = 30;
+    [SerializeField] private float _delay;
 
     private Truck _truck;
     private float _lastSpawnTime;
@@ -18,7 +18,7 @@ public class TruckSpawnTime : MonoBehaviour
         if(_truck.gameObject.activeSelf == false)
             _lastSpawnTime += Time.deltaTime;
 
-        if (_lastSpawnTime >= Delay)
+        if (_lastSpawnTime >= _delay)
         {
             _truck.gameObject.SetActive(true);
             _lastSpawnTime = 0;
