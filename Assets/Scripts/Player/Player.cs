@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private PlayerAnimator _playerAnimator;
 
     public bool IsFull { get; private set; }
+    public bool IsOreActive => _ore.gameObject.activeSelf;
+    public bool IsDominoActive => _domino.gameObject.activeSelf;
 
     private void Awake()
     {
