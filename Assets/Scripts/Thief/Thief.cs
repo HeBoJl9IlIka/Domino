@@ -6,12 +6,15 @@ using UnityEngine.Events;
 [RequireComponent(typeof(ThiefAnimator))]
 public class Thief : MonoBehaviour
 {
+    private const float Delay = 1f;
+
     [SerializeField] private DominoThief _inactiveDomino;
     [SerializeField] private ParticleSystem _smokeKick;
 
     private ThiefSpawn _thiefSpawn;
     private ThiefMovement _thiefMovement;
     private Domino _domino;
+    private float _delay;
 
     public bool IsTookDomino { get; private set; }
     public bool IsKicked { get; private set; }
@@ -33,12 +36,19 @@ public class Thief : MonoBehaviour
     private void Update()
     {
         if ((IsTookDomino) || (IsKicked))
-            if (_thiefMovement.IsEscaped)
+        {
+            _delay += Time.deltaTime;
+
+            if (_delay >= Delay)
             {
-                gameObject.SetActive(false);
-                IsKicked = false;
-                IsTookDomino = false;
+                if (_thiefMovement.IsEscaped)
+                {
+                    gameObject.SetActive(false);
+                    IsKicked = false;
+                    IsTookDomino = false;
+                }
             }
+        }
     }
 
     private void OnEnable()
@@ -48,7 +58,6 @@ public class Thief : MonoBehaviour
 
     private void OnDisable()
     {
-        _thiefMovement.SpeedDown();
         Disabled?.Invoke();
     }
 
@@ -67,7 +76,6 @@ public class Thief : MonoBehaviour
                 _domino.gameObject.SetActive(false);
                 _smokeKick.Play();
                 Escape();
-                _thiefMovement.SpeedUp();
                 IsKicked = true;
             }
         }
