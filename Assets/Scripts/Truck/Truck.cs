@@ -38,7 +38,7 @@ public class Truck : MonoBehaviour
     {
         if (other.TryGetComponent(out Player player))
         {
-            if (player.IsFull == false)
+            if (player.IsDominoActive == false)
                 return;
 
             AnimationMovingDomino domino = _dominos.FirstOrDefault(domino => domino.gameObject.activeSelf == false);
