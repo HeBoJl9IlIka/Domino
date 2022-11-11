@@ -5,6 +5,7 @@ public class DominoFactoryWarehouse : MonoBehaviour
 {
     [SerializeField] private RobotDropOre[] _robotsDropOre;
     [SerializeField] private DominoFactoryProduction _factoryProduction;
+    [SerializeField] private PlayerDroppingOre _playerDroppingOre;
 
     public uint OreCount { get; private set; }
 
@@ -18,6 +19,7 @@ public class DominoFactoryWarehouse : MonoBehaviour
         }
 
         _factoryProduction.Produced += OnProduced;
+        _playerDroppingOre.Droped += OnDroped;
     }
 
     private void OnDisable()
@@ -28,6 +30,7 @@ public class DominoFactoryWarehouse : MonoBehaviour
         }
 
         _factoryProduction.Produced -= OnProduced;
+        _playerDroppingOre.Droped -= OnDroped;
     }
 
     private void OnDroped()
