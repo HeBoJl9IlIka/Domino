@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class RobotFactorySpawner : MonoBehaviour
+public class RobotSpawner : MonoBehaviour
 {
     [SerializeField] private Transform _pointSpawn;
 

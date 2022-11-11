@@ -4,8 +4,6 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class RobotMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-
     private NavMeshAgent _agent;
 
     private void Start()

@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(RobotFactorySpawner))]
+[RequireComponent(typeof(RobotSpawner))]
 public class RobotFactoryUpgrade : MonoBehaviour
 {
     [SerializeField] private int _price;
     [SerializeField] private GameObject _icon;
     
     private ParticleSystem _confetti;
-    private RobotFactorySpawner _spawner;
+    private RobotSpawner _spawner;
     private int _priceStep;
 
     public event UnityAction<int> Upgraded;
@@ -16,7 +16,7 @@ public class RobotFactoryUpgrade : MonoBehaviour
 
     private void Awake()
     {
-        _spawner = GetComponent<RobotFactorySpawner>();
+        _spawner = GetComponent<RobotSpawner>();
         _confetti = GetComponentInChildren<ParticleSystem>();
         _priceStep = _price;
 
