@@ -15,7 +15,6 @@ public class PlayerWallet : MonoBehaviour
 
     private void Start()
     {
-        _money = 4441290;
         Changed?.Invoke(_money);
     }
 
