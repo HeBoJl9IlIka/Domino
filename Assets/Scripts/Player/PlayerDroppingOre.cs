@@ -16,7 +16,7 @@ public class PlayerDroppingOre : MonoBehaviour
     {
         if (other.TryGetComponent(out OreUnloadingPoint oreUnloadingPoint))
         {
-            if (_player.IsFull)
+            if (_player.IsOreActive)
             {
                 Droped?.Invoke();
             }
