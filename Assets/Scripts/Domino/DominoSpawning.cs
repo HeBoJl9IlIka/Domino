@@ -7,6 +7,7 @@ public class DominoSpawning : MonoBehaviour
 
     private Animator _animator;
     private Rigidbody _rigidbody;
+    private Vector3 _defaultRotation = new Vector3(0, 0, 90);
 
     private void Start()
     {
@@ -21,6 +22,11 @@ public class DominoSpawning : MonoBehaviour
 
         _animator.enabled = false;
         _rigidbody.isKinematic = false;
+    }
+
+    private void OnDisable()
+    {
+        transform.eulerAngles = _defaultRotation;
     }
 
     public void Reset()
