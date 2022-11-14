@@ -11,7 +11,7 @@ public class DominoFactoryNeedAmountOre : MonoBehaviour
 
     private string _text => _factoryWarehause.OreCount.ToString() + " / " + _factoryProduction.NeedAmount.ToString();
 
-    private void Start()
+    private void Awake()
     {
         _amount = GetComponentInChildren<TMP_Text>();
     }

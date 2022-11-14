@@ -4,14 +4,20 @@ using UnityEngine.Events;
 
 public class PlayerWallet : MonoBehaviour
 {
-    private const int MoneyStep = 2;
+    private const int MoneyStep = 10;
 
-    [SerializeField] PointDomino[] _dominos;
-    [SerializeField] Truck _truck;
+    [SerializeField] private DominoPlace _containerDomino;
+    [SerializeField] private Truck _truck;
 
+    private PointDomino[] _dominos;
     private int _money;
 
     public event UnityAction<int> Changed;
+
+    private void Awake()
+    {
+        _dominos = _containerDomino.GetComponentsInChildren<PointDomino>();
+    }
 
     private void Start()
     {

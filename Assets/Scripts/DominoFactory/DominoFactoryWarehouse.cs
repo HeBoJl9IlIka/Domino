@@ -4,7 +4,6 @@ using UnityEngine.Events;
 public class DominoFactoryWarehouse : MonoBehaviour
 {
     [SerializeField] private RobotDropOre[] _robotsDropOre;
-    [SerializeField] private DominoFactoryProduction _factoryProduction;
     [SerializeField] private PlayerDroppingOre _playerDroppingOre;
 
     public uint OreCount { get; private set; }
@@ -18,7 +17,6 @@ public class DominoFactoryWarehouse : MonoBehaviour
             robot.Droped += OnDroped;
         }
 
-        _factoryProduction.Produced += OnProduced;
         _playerDroppingOre.Droped += OnDroped;
     }
 
@@ -29,18 +27,17 @@ public class DominoFactoryWarehouse : MonoBehaviour
             robot.Droped -= OnDroped;
         }
 
-        _factoryProduction.Produced -= OnProduced;
         _playerDroppingOre.Droped -= OnDroped;
+    }
+
+    public void RemoveOre(int needAmount)
+    {
+        OreCount -= (uint)needAmount;
     }
 
     private void OnDroped()
     {
         ++OreCount;
         Loaded?.Invoke(OreCount);
-    }
-
-    private void OnProduced(int needAmount)
-    {
-        OreCount -= (uint)needAmount;
     }
 }

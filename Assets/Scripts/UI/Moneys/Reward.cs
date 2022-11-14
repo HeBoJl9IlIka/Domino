@@ -2,11 +2,18 @@ using UnityEngine;
 
 public class Reward : MonoBehaviour
 {
-    private const int Multiplier = 20;
+    private const int Multiplier = 100;
 
+    [SerializeField] private DominoPlace _containerDomino;
     [SerializeField] private Truck _truck;
     [SerializeField] private AnimationMoneyMovement[] _moneys;
-    [SerializeField] private PointDomino[] _pointsDomino;
+
+    private PointDomino[] _pointsDomino;
+
+    private void Awake()
+    {
+        _pointsDomino = _containerDomino.GetComponentsInChildren<PointDomino>();
+    }
 
     private void OnEnable()
     {

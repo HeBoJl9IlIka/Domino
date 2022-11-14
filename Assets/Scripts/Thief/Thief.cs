@@ -41,6 +41,8 @@ public class Thief : MonoBehaviour
 
             if (_delay >= Delay)
             {
+                _delay = 0;
+
                 if (_thiefMovement.IsEscaped)
                 {
                     gameObject.SetActive(false);

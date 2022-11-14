@@ -5,11 +5,17 @@ using UnityEngine.Events;
 public class DominoPlace : MonoBehaviour
 {
     [SerializeField] private Thief _thief;
-    [SerializeField] private PointDomino[] _points;
+
+    private PointDomino[] _points;
 
     public Transform Target { get; private set; }
 
     public event UnityAction AllShowed;
+
+    private void Awake()
+    {
+        _points = GetComponentsInChildren<PointDomino>();
+    }
 
     private void Start()
     {

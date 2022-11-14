@@ -38,6 +38,7 @@ public class DominoFactoryProduction : MonoBehaviour
             if (domino != null)
             {
                 domino.gameObject.SetActive(true);
+                _factoryWarehouse.RemoveOre(_needAmount);
                 Produced?.Invoke(_needAmount);
             }
         }
