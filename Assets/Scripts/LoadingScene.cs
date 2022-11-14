@@ -1,17 +1,17 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-[RequireComponent(typeof(DataSaving))]
+[RequireComponent(typeof(Data))]
 public class LoadingScene : MonoBehaviour
 {
-    private DataSaving _dataSaving;
+    private Data _dataSaving;
 
     public int SceneCount => SceneManager.sceneCount;
     public int CurrentScene => SceneManager.GetActiveScene().buildIndex;
 
     private void Start()
     {
-        _dataSaving = GetComponent<DataSaving>();
+        _dataSaving = GetComponent<Data>();
     }
 
     public void Open(int numberScene)

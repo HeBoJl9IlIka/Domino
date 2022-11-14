@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(LoadingScene))]
-public class DataSaving : MonoBehaviour
+public class Data : MonoBehaviour
 {
     private const string Money = "money";
     private const string Level = "level";
@@ -25,8 +25,6 @@ public class DataSaving : MonoBehaviour
     private void Start()
     {
         _loadingScene = GetComponent<LoadingScene>();
-        Debug.Log("last opening scene = " + LastOpeningLevel);
-        Debug.Log("current scene = " + _loadingScene.CurrentScene);
 
         if(LastOpeningLevel != _loadingScene.CurrentScene)
             _loadingScene.Open(LastOpeningLevel);
@@ -42,6 +40,11 @@ public class DataSaving : MonoBehaviour
     {
         _playerWallet.Changed -= OnChanged;
         _level.Completed -= OnCompleted;
+    }
+
+    public void RemoveAllSave()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
     private void OnChanged(int value)
