@@ -6,6 +6,7 @@ public class Reward : MonoBehaviour
 
     [SerializeField] private DominoPlace _containerDomino;
     [SerializeField] private Truck _truck;
+    [SerializeField] private Level _level;
     [SerializeField] private AnimationMoneyMovement[] _moneys;
 
     private PointDomino[] _pointsDomino;
@@ -21,6 +22,7 @@ public class Reward : MonoBehaviour
             point.Showed += OnShowed;
 
         _truck.Loaded += OnShowed;
+        _level.Completed += OnShowed;
     }
 
     private void OnDisable()
@@ -29,6 +31,7 @@ public class Reward : MonoBehaviour
             point.Showed -= OnShowed;
 
         _truck.Loaded -= OnShowed;
+        _level.Completed -= OnShowed;
     }
 
     private void OnShowed(int price)
