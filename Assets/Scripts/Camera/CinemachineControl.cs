@@ -15,10 +15,7 @@ public class CinemachineControl: MonoBehaviour
     {
         if(_virtualCamera4.TryGetComponent(out CameraMotionAnimation cameraMotionAnimation))
             _cameraMotionAnimation = cameraMotionAnimation;
-    }
 
-    private void Start()
-    {
         if (_cameraMotionAnimation != null)
             _virtualCamera4.SetActive(true);
         else
