@@ -13,18 +13,20 @@ public class Data : MonoBehaviour
     private LoadingScene _loadingScene;
 
     public int LastOpeningLevel { get; private set; }
+    public int AmountMoney => PlayerPrefs.GetInt(Money);
 
     public event UnityAction<int> MoneyLoaded;
 
     private void Awake()
     {
         LastOpeningLevel = PlayerPrefs.GetInt(Level);
-        MoneyLoaded?.Invoke(PlayerPrefs.GetInt(Money));
     }
 
     private void Start()
     {
         _loadingScene = GetComponent<LoadingScene>();
+        
+        Debug.Log(PlayerPrefs.GetInt(Money));
 
         if(LastOpeningLevel != _loadingScene.CurrentScene)
             _loadingScene.Open(LastOpeningLevel);
@@ -47,9 +49,9 @@ public class Data : MonoBehaviour
         PlayerPrefs.DeleteAll();
     }
 
-    private void OnChanged(int value)
+    private void OnChanged(int money)
     {
-        PlayerPrefs.SetInt(Money, value);
+        PlayerPrefs.SetInt(Money, money);
     }
     
     private void OnCompleted(int arg0)

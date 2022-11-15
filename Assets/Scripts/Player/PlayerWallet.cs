@@ -9,6 +9,7 @@ public class PlayerWallet : MonoBehaviour
     [SerializeField] private DominoPlace _containerDomino;
     [SerializeField] private Truck _truck;
     [SerializeField] private Level _level;
+    [SerializeField] private Data _data;
 
     private PointDomino[] _dominos;
     private int _money;
@@ -22,7 +23,10 @@ public class PlayerWallet : MonoBehaviour
 
     private void Start()
     {
+        _money = _data.AmountMoney;
         Changed?.Invoke(_money);
+
+        Debug.Log("Player wallet " + _money);
     }
 
     private void OnEnable()
@@ -41,6 +45,11 @@ public class PlayerWallet : MonoBehaviour
 
         _truck.Loaded -= OnLoaded;
         _level.Completed -= OnShowed;
+    }
+
+    public void Set(int money)
+    {
+        _money = money;
     }
 
     public bool TryBuy(int price)
@@ -72,14 +81,8 @@ public class PlayerWallet : MonoBehaviour
         for (int i = 0; i < money / MoneyStep; i++)
         {
             _money += MoneyStep;
-            Changed?.Invoke(_money);
             yield return null;
+            Changed?.Invoke(_money);
         }
-    }
-
-    private void Remove(int money)
-    {
-        _money -= money;
-        Changed?.Invoke(_money);
     }
 }
