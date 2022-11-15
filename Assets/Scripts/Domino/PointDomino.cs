@@ -14,6 +14,12 @@ public class PointDomino : MonoBehaviour
 
     public event UnityAction<int> Showed;
 
+    private void Start()
+    {
+        if (_domino.activeSelf)
+            IsActive = true;
+    }
+
     public void ShowPointer()
     {
         IsIndicates = true;
