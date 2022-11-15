@@ -19,7 +19,7 @@ public class PlayerDropDomino : MonoBehaviour
     {
         if (other.TryGetComponent(out PointDomino pointDomino))
         {
-            if (_player.IsFull)
+            if (_player.IsDominoActive)
             {
                 Droped?.Invoke();
                 _dominoPlace.ShowDomino();
