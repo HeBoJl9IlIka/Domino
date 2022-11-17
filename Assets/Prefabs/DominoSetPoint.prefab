@@ -5017,7 +5017,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d9a51f83b0da0b14aa03613fb9302372, type: 2}
+  - {fileID: 2100000, guid: 4fc15fb8a05628e41945371a3bdb9086, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5191,7 +5191,6 @@ MonoBehaviour:
   _dust: {fileID: 2093584072441245656}
   _money: {fileID: 2093584071997707407}
   _price: 0
-  _moneySpawnCount: 0
 --- !u!65 &2093584073781975017
 BoxCollider:
   m_ObjectHideFlags: 0

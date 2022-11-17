@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.02745098, g: 0.03529412, b: 0.050980393, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientSkyColor: {r: 0.1, g: 0.13239436, b: 0.2, a: 1}
+  m_AmbientEquatorColor: {r: 0.050980393, g: 0.06666666, b: 0.1, a: 1}
+  m_AmbientGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -19627,30 +19627,30 @@ Transform:
   - {fileID: 7795864210559535617}
   - {fileID: 7795864210230846778}
   - {fileID: 7795864208850867824}
+  - {fileID: 1077099489}
   - {fileID: 7795864210463974440}
-  - {fileID: 7795864209988314423}
-  - {fileID: 7795864208797479858}
-  - {fileID: 1279493149834067589}
   - {fileID: 14800928}
+  - {fileID: 711974121}
   - {fileID: 136209462}
+  - {fileID: 7795864209988314423}
   - {fileID: 2093899073}
+  - {fileID: 7795864208797479858}
   - {fileID: 2138075221}
-  - {fileID: 8934390996336083211}
+  - {fileID: 1279493149834067589}
   - {fileID: 786743924}
-  - {fileID: 8934390995396341774}
+  - {fileID: 8934390996336083211}
   - {fileID: 1261957743}
-  - {fileID: 8934390995162391356}
   - {fileID: 310523878}
+  - {fileID: 8934390995396341774}
   - {fileID: 1477524106}
   - {fileID: 8934390996454667146}
   - {fileID: 214777701}
+  - {fileID: 8934390995162391356}
   - {fileID: 68552714}
-  - {fileID: 1077099489}
-  - {fileID: 128868778}
   - {fileID: 1826932642}
-  - {fileID: 151089591}
-  - {fileID: 711974121}
+  - {fileID: 128868778}
   - {fileID: 1917164552}
+  - {fileID: 151089591}
   - {fileID: 1388564013}
   - {fileID: 2096097928}
   - {fileID: 1709781592}
@@ -23237,7 +23237,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &8934390994950813188
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -23254,7 +23254,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &8934390994950813189
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -23269,7 +23269,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8934390994950813194
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -32979,7 +32979,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.8957529, y: 1}
+    m_SensorSize: {x: 1.6870342, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -34922,7 +34922,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 11.93, y: -6.99, z: 4.59}
 --- !u!114 &8934390995364333864
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -34944,7 +34944,7 @@ MonoBehaviour:
   m_AngularDamping: 0
 --- !u!1 &8934390995364333866
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -34962,7 +34962,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &8934390995364333867
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -34977,7 +34977,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8934390995364333870
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42345,7 +42345,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1, y: 1}
+    m_SensorSize: {x: 1.6870342, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -44650,7 +44650,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.8957529, y: 1}
+    m_SensorSize: {x: 1.6870342, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -44691,10 +44691,10 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8934390996174983176
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -44712,7 +44712,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &8934390996174983177
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -44727,7 +44727,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8934390996174983182
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -44739,7 +44739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &8934390996174983183
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -50755,8 +50755,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 70
+  far clip plane: 100
+  field of view: 74
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -50819,8 +50819,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8934390996639998115}
-  m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 9.79, y: 28, z: -0.85}
+  m_LocalRotation: {x: 0.36650118, y: -0, z: -0, w: 0.9304176}
+  m_LocalPosition: {x: 10.52, y: 11.5, z: -12.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
