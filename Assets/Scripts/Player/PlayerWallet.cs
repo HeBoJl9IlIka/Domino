@@ -25,8 +25,6 @@ public class PlayerWallet : MonoBehaviour
     {
         _money = _data.AmountMoney;
         Changed?.Invoke(_money);
-
-        Debug.Log("Player wallet " + _money);
     }
 
     private void OnEnable()

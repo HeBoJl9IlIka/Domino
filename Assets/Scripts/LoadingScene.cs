@@ -6,7 +6,7 @@ public class LoadingScene : MonoBehaviour
 {
     private Data _dataSaving;
 
-    public int SceneCount => SceneManager.sceneCount;
+    public int SceneCount => SceneManager.sceneCountInBuildSettings;
     public int CurrentScene => SceneManager.GetActiveScene().buildIndex;
 
     private void Start()
