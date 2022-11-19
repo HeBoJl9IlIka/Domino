@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(BoxCollider))]
 public class PointDomino : MonoBehaviour
 {
     [SerializeField] private GameObject _pointer;
@@ -9,6 +10,8 @@ public class PointDomino : MonoBehaviour
     [SerializeField] private ParticleSystem _money;
     [SerializeField] private int _price;
 
+    private BoxCollider _boxCollider;
+
     public bool IsActive { get; private set; }
     public bool IsIndicates { get; private set; }
 
@@ -16,6 +19,9 @@ public class PointDomino : MonoBehaviour
 
     private void Start()
     {
+        _boxCollider = GetComponent<BoxCollider>();
+        _boxCollider.enabled = false;
+
         if (_domino.activeSelf)
             IsActive = true;
     }
@@ -23,12 +29,14 @@ public class PointDomino : MonoBehaviour
     public void ShowPointer()
     {
         IsIndicates = true;
-         _pointer.SetActive(true);
+        _boxCollider.enabled = true;
+        _pointer.SetActive(true);
     }
 
     public void ShowDomino()
     {
         IsIndicates = false;
+        _boxCollider.enabled = false;
         IsActive = true;
         _dust.Play();
         _money.Play();
