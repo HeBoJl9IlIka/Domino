@@ -348,8 +348,8 @@ GameObject:
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &911061919
 Transform:
@@ -1257,6 +1257,14 @@ PrefabInstance:
     - target: {fileID: 2455953355255626911, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519554603649822087, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519554603663657543, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3159432003207700176, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_LocalPosition.x

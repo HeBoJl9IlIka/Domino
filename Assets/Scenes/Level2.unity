@@ -742,6 +742,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 5354411022904619654, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5513157061122673460, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -877,6 +881,14 @@ PrefabInstance:
     - target: {fileID: 5513157062799989066, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485285767349308452, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312968748068459439, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
