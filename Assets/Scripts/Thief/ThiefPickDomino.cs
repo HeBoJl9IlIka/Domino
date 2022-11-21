@@ -8,6 +8,10 @@ public class ThiefPickDomino : MonoBehaviour
     public bool TryGetActiveDomino(out Domino domino)
     {
         domino = _dominos.FirstOrDefault(domino => domino.gameObject.activeSelf == true);
-        return domino != null;
+
+        if (domino.GetComponentInParent<PointDomino>().TryGetComponent(out BoxCollider boxCollider))
+            boxCollider.enabled = true;
+
+        return domino && boxCollider != null;
     }
 }
