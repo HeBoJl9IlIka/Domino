@@ -11977,9 +11977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '0
-
-'
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b85be5763bc8c54ea8bef898b1ae0f9, type: 2}
   m_sharedMaterial: {fileID: 7442688977521464634, guid: 0b85be5763bc8c54ea8bef898b1ae0f9, type: 2}
@@ -40046,7 +40044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1348416837255637434, guid: 4c8e16529ada0164f84feb55e7db0572, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -300
+      value: -340
       objectReference: {fileID: 0}
     - target: {fileID: 1348416837255637434, guid: 4c8e16529ada0164f84feb55e7db0572, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -57791,7 +57789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2fef0fb3de84a1a43ae1394e28b7840b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.94
+      value: -14.2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2fef0fb3de84a1a43ae1394e28b7840b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -59233,7 +59231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2fef0fb3de84a1a43ae1394e28b7840b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.24
+      value: -15.499999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2fef0fb3de84a1a43ae1394e28b7840b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -59611,7 +59609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2fef0fb3de84a1a43ae1394e28b7840b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.56
+      value: -15.819999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2fef0fb3de84a1a43ae1394e28b7840b, type: 3}
       propertyPath: m_LocalPosition.y
