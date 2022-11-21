@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 9e457ce03002aa24281290b4d256821d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 7ffbd0f1a1b16634390cd1c7f7580868, type: 2}
 --- !u!1 &20634244
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,7 +2369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062715359140216457, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5062715359273556469, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
@@ -2553,7 +2553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5513157062142894771, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5513157062146587175, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
@@ -2561,7 +2561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5513157062307860289, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: _levelReward
-      value: 40000
+      value: 19000
       objectReference: {fileID: 0}
     - target: {fileID: 5877000409822114187, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_Enabled

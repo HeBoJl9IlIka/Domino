@@ -12060,7 +12060,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b85be5763bc8c54ea8bef898b1ae0f9, type: 2}
   m_sharedMaterial: {fileID: 7442688977521464634, guid: 0b85be5763bc8c54ea8bef898b1ae0f9, type: 2}
@@ -12404,6 +12404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8299add29956f44afcca0f500324a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _robotSpawner: {fileID: 5513157062697286656}
 --- !u!1 &4539523522329805458
 GameObject:
   m_ObjectHideFlags: 0
@@ -17260,7 +17261,7 @@ MonoBehaviour:
   - {fileID: 7056700442508728299}
   - {fileID: 7056700442569733036}
   - {fileID: 7056700443989235973}
-  _delaySpawnOre: 5
+  _delaySpawnOre: 4
 --- !u!1 &5513157061487595510
 GameObject:
   m_ObjectHideFlags: 0

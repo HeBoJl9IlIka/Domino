@@ -1259,11 +1259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062715359140216457, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5062715359273556469, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5062715359443101224, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
@@ -1295,7 +1295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062715359782466371, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5354411022904619654, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1431,7 +1431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5513157062142894771, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5513157062146587169, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: _delay
@@ -1443,7 +1443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5513157062307860289, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: _levelReward
-      value: 25000
+      value: 13000
       objectReference: {fileID: 0}
     - target: {fileID: 5877000409822114187, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_Enabled

@@ -9,6 +9,8 @@ public class GiftSpawnTime : MonoBehaviour
     private const float MinPositionZ = -6f;
     private const float MaxPositionZ = 5f;
 
+    [SerializeField] private RobotSpawner _robotSpawner;
+
     private Gift _gift;
     private float _lastSpawnTime;
 
@@ -20,6 +22,9 @@ public class GiftSpawnTime : MonoBehaviour
 
     private void Update()
     {
+        if(_robotSpawner.IsFull == false)
+            gameObject.SetActive(false);
+
         if (_gift.gameObject.activeSelf)
             return;
 
