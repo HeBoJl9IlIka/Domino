@@ -17,11 +17,13 @@ public class PointDomino : MonoBehaviour
 
     public event UnityAction<int> Showed;
 
-    private void Start()
+    private void Awake()
     {
         _boxCollider = GetComponent<BoxCollider>();
-        _boxCollider.enabled = false;
+    }
 
+    private void Start()
+    {
         if (_domino.activeSelf)
             IsActive = true;
     }

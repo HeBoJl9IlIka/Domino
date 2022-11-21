@@ -15,8 +15,8 @@ TagManager:
   - Robot
   - Player
   - Domino
-  - 
-  - 
+  - IgnoreBorders
+  - Border
   - 
   - 
   - 
