@@ -4,7 +4,7 @@ using UnityEngine;
 public class OreMining : MonoBehaviour
 {
     private const float _upgradingSpawn = 0.2f;
-    private const float _minTimeSpawn = 0.7f;
+    private const float _minTimeSpawn = 1.2f;
 
     [SerializeField] private OreAnimator[] _ores;
     [SerializeField] private float _delaySpawnOre;

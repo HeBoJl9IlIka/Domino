@@ -25,6 +25,6 @@ public class SpawnTimeOre : MonoBehaviour
 
     private void OnUpgraded(int arg0)
     {
-        _currentTime.text = _oreMining.CurrentSpawnTimeOre.ToString("#.##");
+        _currentTime.text = _oreMining.CurrentSpawnTimeOre.ToString("#.#");
     }
 }
