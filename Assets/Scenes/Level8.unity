@@ -2447,6 +2447,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5513157061177806945, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: _delaySpawn
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5513157061177806951, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
       value: 1

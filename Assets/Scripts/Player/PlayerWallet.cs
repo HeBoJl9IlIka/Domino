@@ -4,7 +4,9 @@ using UnityEngine.Events;
 
 public class PlayerWallet : MonoBehaviour
 {
-    private const int MoneyStep = 10;
+    private int MaxMoney = 5000;
+    private const int SmallStep = 10;
+    private const int BigStep = 500;
 
     [SerializeField] private DominoPlace _containerDomino;
     [SerializeField] private Truck _truck;
@@ -76,9 +78,14 @@ public class PlayerWallet : MonoBehaviour
 
     private IEnumerator Add(int money)
     {
-        for (int i = 0; i < money / MoneyStep; i++)
+        int moneyStep = SmallStep;
+
+        if (money > MaxMoney)
+            moneyStep = BigStep;
+
+        for (int i = 0; i < money / moneyStep; i++)
         {
-            _money += MoneyStep;
+            _money += moneyStep;
             yield return null;
             Changed?.Invoke(_money);
         }
