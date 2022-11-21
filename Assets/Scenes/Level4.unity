@@ -970,9 +970,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5513157062146587169, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: _delay
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5513157062146587175, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513157062307860289, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: _levelReward
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 5854909493051420093, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: _speed

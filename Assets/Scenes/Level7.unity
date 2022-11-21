@@ -2404,6 +2404,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5513157061177806945, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: _delaySpawn
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513157061177806951, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5513157061293187285, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.9
@@ -2504,9 +2512,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5513157062146587169, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: _delay
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5513157062146587175, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513157062307860289, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: _levelReward
+      value: 35000
       objectReference: {fileID: 0}
     - target: {fileID: 5877000409822114187, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_Enabled
