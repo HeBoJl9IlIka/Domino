@@ -4,18 +4,10 @@ public class LeaderboardPlayer
     public string Name { get; private set; }
     public int Score { get; private set; }
 
-    public void SetRank(int rank)
+    public void SetValue(int rank, string name, int score)
     {
-        Rank = rank;
-    }
-    
-    public void SetName(string name)
-    {
+        Rank = rank; 
         Name = name;
-    }
-    
-    public void SetScore(int score)
-    {
         Score = score;
     }
 }

@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class YnadexSDK : MonoBehaviour
 {
     private const string LeaderboardName = "dominoLeaderboard";
+    private const int MaxPlayers = 6;
 
     [SerializeField] private PlayerWallet _playerWallet;
     [SerializeField] private LastDomino _lastDomino;
@@ -17,10 +18,8 @@ public class YnadexSDK : MonoBehaviour
     [SerializeField] private Text _personalProfileDataPermissionStatusText;
     [SerializeField] private Text _leaderboard;
 
-    private LeaderboardPlayer _player;
     private List<LeaderboardPlayer> _players;
 
-    public LeaderboardPlayer CurrentPlayer => _player;
     public LeaderboardPlayer[] Players => _players.ToArray();
     public bool IsLeaderboardLoaded { get; private set; }
 
@@ -41,7 +40,7 @@ public class YnadexSDK : MonoBehaviour
 
         if (IsLeaderboardLoaded == false)
         {
-            GetLeaderboard();
+            LoadLeaderboard();
             IsLeaderboardLoaded = true;
         }
     }
@@ -61,45 +60,20 @@ public class YnadexSDK : MonoBehaviour
         VideoAd.Show();
     }
 
-    private void GetCurrentPlayerRank()
-    {
-        LeaderboardPlayer leaderboardPlayer = new LeaderboardPlayer();
-
-        Leaderboard.GetPlayerEntry(LeaderboardName, (result) =>
-        {
-            if (result == null)
-            {
-                leaderboardPlayer.SetRank(0);
-                leaderboardPlayer.SetName(result.player.publicName);
-                leaderboardPlayer.SetScore(_playerWallet.Money);
-            }
-            else
-            {
-                leaderboardPlayer.SetRank(result.rank);
-                leaderboardPlayer.SetName(result.player.publicName);
-                leaderboardPlayer.SetScore(result.score);
-            }
-
-            _player = leaderboardPlayer;
-        });
-    }
-
-    private void GetLeaderboard()
+    private void LoadLeaderboard()
     {
         LeaderboardPlayer leaderboardPlayer = new LeaderboardPlayer();
 
         Leaderboard.GetEntries(LeaderboardName, (result) =>
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < MaxPlayers; i++)
             {
                 string name = result.entries[i].player.publicName;
 
                 if (string.IsNullOrEmpty(name))
                     name = "Anonymous";
 
-                leaderboardPlayer.SetRank(result.entries[i].rank);
-                leaderboardPlayer.SetName(name);
-                leaderboardPlayer.SetScore(result.entries[i].score);
+                leaderboardPlayer.SetValue(result.entries[i].rank, name, result.entries[i].score);
 
                 _players.Add(leaderboardPlayer);
             }

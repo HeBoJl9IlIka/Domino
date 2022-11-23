@@ -10,6 +10,10 @@ public class FillingPlayerData : MonoBehaviour
     public void Set(LeaderboardPlayer player)
     {
         _rank.text = player.Rank.ToString();
+
+        if (player.Rank == 0)
+            _rank.text = "-";
+
         _name.text = player.Name.ToString();
         _score.text = player.Score.ToString();
     }
