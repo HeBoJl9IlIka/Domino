@@ -82,7 +82,7 @@ public class PlayerWallet : MonoBehaviour
     {
         int moneyStep = SmallStep;
 
-        if (money > MaxMoney)
+        if (money >= MaxMoney)
             moneyStep = BigStep;
 
         for (int i = 0; i < money / moneyStep; i++)

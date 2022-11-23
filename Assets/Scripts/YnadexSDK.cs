@@ -17,10 +17,12 @@ public class YnadexSDK : MonoBehaviour
     [SerializeField] private Text _personalProfileDataPermissionStatusText;
     [SerializeField] private Text _leaderboard;
 
-    //[SerializeField]
-    //private InputField _playerDataTextField;
+    private LeaderboardPlayer _player;
+    private List<LeaderboardPlayer> _players;
 
-    private List<string> _players;
+    public LeaderboardPlayer CurrentPlayer => _player;
+    public LeaderboardPlayer[] Players => _players.ToArray();
+    public bool IsLeaderboardLoaded { get; private set; }
 
     private void Awake()
     {
@@ -33,21 +35,14 @@ public class YnadexSDK : MonoBehaviour
         yield break;
 #endif
 
-        // Always wait for it if invoking something immediately in the first scene.
         yield return YandexGamesSdk.Initialize();
 
-        GetLeaderboard();
+        _players = new List<LeaderboardPlayer>();
 
-        while (true)
+        if (IsLeaderboardLoaded == false)
         {
-            _authorizationStatusText.color = PlayerAccount.IsAuthorized ? Color.green : Color.red;
-
-            if (PlayerAccount.IsAuthorized)
-                _personalProfileDataPermissionStatusText.color = PlayerAccount.HasPersonalProfileDataPermission ? Color.green : Color.red;
-            else
-                _personalProfileDataPermissionStatusText.color = Color.red;
-
-            yield return new WaitForSecondsRealtime(0.25f);
+            GetLeaderboard();
+            IsLeaderboardLoaded = true;
         }
     }
 
@@ -61,82 +56,55 @@ public class YnadexSDK : MonoBehaviour
         _lastDomino.Finished -= OnFinished;
     }
 
-    //public void OnShowInterstitialButtonClick()
-    //{
-    //    InterstitialAd.Show();
-    //}
-
     public void OnShowVideoButtonClick()
     {
         VideoAd.Show();
     }
 
-    //public void OnAuthorizeButtonClick()
-    //{
-    //    PlayerAccount.Authorize();
-    //}
-
-    //public void OnRequestPersonalProfileDataPermissionButtonClick()
-    //{
-    //    PlayerAccount.RequestPersonalProfileDataPermission();
-    //}
-
-    //public void OnGetProfileDataButtonClick()
-    //{
-    //    PlayerAccount.GetProfileData((result) =>
-    //    {
-    //        string name = result.publicName;
-    //        if (string.IsNullOrEmpty(name))
-    //            name = "Anonymous";
-    //        Debug.Log($"My id = {result.uniqueID}, name = {name}");
-    //    });
-    //}
-
-    //public void OnSetLeaderboardScoreButtonClick()
-    //{
-    //    Leaderboard.SetScore("dominoLeaderboard", Random.Range(1, 100));
-    //}
-
-    private void GetLeaderboard()
+    private void GetCurrentPlayerRank()
     {
-        Leaderboard.GetEntries(LeaderboardName, (result) =>
+        LeaderboardPlayer leaderboardPlayer = new LeaderboardPlayer();
+
+        Leaderboard.GetPlayerEntry(LeaderboardName, (result) =>
         {
-            //Debug.Log($"My rank = {result.userRank}");
-            for (int i = 0; i < 6; i++)
+            if (result == null)
             {
-                string name = result.entries[i].player.publicName;
-                if (string.IsNullOrEmpty(name))
-                    name = "Anonymous";
-                _leaderboard.text += result.entries[i].rank.ToString() + " " + name + " " + result.entries[i].score + "\n";
-                //_players.Add(result.entries[i].rank.ToString() + " " + name + " " + result.entries[i].score);
+                leaderboardPlayer.SetRank(0);
+                leaderboardPlayer.SetName(result.player.publicName);
+                leaderboardPlayer.SetScore(_playerWallet.Money);
             }
+            else
+            {
+                leaderboardPlayer.SetRank(result.rank);
+                leaderboardPlayer.SetName(result.player.publicName);
+                leaderboardPlayer.SetScore(result.score);
+            }
+
+            _player = leaderboardPlayer;
         });
     }
 
-    //public void OnGetLeaderboardPlayerEntryButtonClick()
-    //{
-        
-    //}
+    private void GetLeaderboard()
+    {
+        LeaderboardPlayer leaderboardPlayer = new LeaderboardPlayer();
 
-    //public void OnSetPlayerDataButtonClick()
-    //{
-    //    PlayerAccount.SetPlayerData(_playerDataTextField.text);
-    //}
+        Leaderboard.GetEntries(LeaderboardName, (result) =>
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                string name = result.entries[i].player.publicName;
 
-    //public void OnGetPlayerDataButtonClick()
-    //{
-    //    PlayerAccount.GetPlayerData((data) => _playerDataTextField.text = data);
-    //}
+                if (string.IsNullOrEmpty(name))
+                    name = "Anonymous";
 
-    //public void OnGetDeviceTypeButtonClick()
-    //{
-    //    Debug.Log($"DeviceType = {Device.Type}");
-    //}
+                leaderboardPlayer.SetRank(result.entries[i].rank);
+                leaderboardPlayer.SetName(name);
+                leaderboardPlayer.SetScore(result.entries[i].score);
 
-    //public void OnGetEnvironmentButtonClick()
-    //{
-    //    Debug.Log($"Environment = {JsonUtility.ToJson(YandexGamesSdk.Environment)}");
-    //}
+                _players.Add(leaderboardPlayer);
+            }
+        });
+    }
 
     private void OnFinished()
     {
