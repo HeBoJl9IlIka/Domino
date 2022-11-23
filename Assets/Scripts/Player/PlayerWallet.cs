@@ -16,6 +16,8 @@ public class PlayerWallet : MonoBehaviour
     private PointDomino[] _dominos;
     private int _money;
 
+    public int Money => _money;
+
     public event UnityAction<int> Changed;
 
     private void Awake()
