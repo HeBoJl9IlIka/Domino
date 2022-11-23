@@ -10,8 +10,10 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsMoving => _rigidbody.velocity.magnitude > 0;
 
-    private float _normalizedSpeedHorizontal => _joystick.Horizontal * _speed * Time.deltaTime;
-    private float _normalizedSpeedVertical => _joystick.Vertical * _speed * Time.deltaTime;
+    private float _normalizedJoystickSpeedHorizontal => _joystick.Horizontal * _speed * Time.deltaTime;
+    private float _normalizedJoystickSpeedVertical => _joystick.Vertical * _speed * Time.deltaTime;
+    private float _normalizedKeybordSpeedHorizontal => Input.GetAxis("Horizontal") * _speed * Time.deltaTime;
+    private float _normalizedKeybordSpeedVertical => Input.GetAxis("Vertical") * _speed * Time.deltaTime;
 
     private void Start()
     {
@@ -21,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         if (_joystick.IsPressed)
-            _rigidbody.AddForce(new Vector3(_normalizedSpeedHorizontal, 0, _normalizedSpeedVertical), ForceMode.VelocityChange);
+            _rigidbody.AddForce(new Vector3(_normalizedJoystickSpeedHorizontal, 0, _normalizedJoystickSpeedVertical), ForceMode.VelocityChange);
+        else
+            _rigidbody.AddForce(new Vector3(_normalizedKeybordSpeedHorizontal, 0, _normalizedKeybordSpeedVertical), ForceMode.VelocityChange);
     }
 }

@@ -18,7 +18,7 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetBool(IsMoving, _playerMovement.IsMoving & _joystick.IsPressed);
+        _animator.SetBool(IsMoving, (_playerMovement.IsMoving & _joystick.IsPressed) || (Input.GetAxis("Vertical") != 0) || (Input.GetAxis("Horizontal") != 0));
     }
 
     public void Slam()

@@ -14,9 +14,6 @@ public class YnadexSDK : MonoBehaviour
 
     [SerializeField] private PlayerWallet _playerWallet;
     [SerializeField] private LastDomino _lastDomino;
-    [SerializeField] private Text _authorizationStatusText;
-    [SerializeField] private Text _personalProfileDataPermissionStatusText;
-    [SerializeField] private Text _leaderboard;
 
     private List<LeaderboardPlayer> _players;
 
@@ -68,6 +65,9 @@ public class YnadexSDK : MonoBehaviour
         {
             for (int i = 0; i < MaxPlayers; i++)
             {
+                if (result == null)
+                    return;
+
                 string name = result.entries[i].player.publicName;
 
                 if (string.IsNullOrEmpty(name))
