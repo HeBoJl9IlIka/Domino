@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class LoadingLeaderboard : MonoBehaviour
+public class ViewingLeaderboard : MonoBehaviour
 {
-    [SerializeField] private YnadexSDK _ynadexSDK;
+    [SerializeField] private YandexLeaderboardLoading _yandexLeaderboardLoading;
 
     private FillingPlayerData[] _fillingPlayerDatas;
     private LeaderboardPlayer[] _players;
@@ -14,9 +14,9 @@ public class LoadingLeaderboard : MonoBehaviour
 
     private void Update()
     {
-        if (_ynadexSDK.IsLeaderboardLoaded)
+        if (_yandexLeaderboardLoading.IsLeaderboardLoaded)
         {
-            _players = _ynadexSDK.Players;
+            _players = _yandexLeaderboardLoading.Players;
 
             for (int i = 0; i < _players.Length; i++)
             {
