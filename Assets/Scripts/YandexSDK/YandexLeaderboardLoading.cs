@@ -1,7 +1,7 @@
 using Agava.YandexGames;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+//using UnityEngine.Events;
 
 public class YandexLeaderboardLoading : MonoBehaviour
 {
@@ -16,25 +16,25 @@ public class YandexLeaderboardLoading : MonoBehaviour
     public LeaderboardPlayer[] Players => _players.ToArray();
     public bool IsLeaderboardLoaded => _currentAmount >= MaxAmount;
 
-    public event UnityAction<string> Action;
+    //public event UnityAction<string> Action;
 
     private void OnEnable()
     {
-        Action?.Invoke("YandexloadLeader enable");
+        //Action?.Invoke("YandexloadLeader enable");
 
         if (_players == null)
         {
-            Action?.Invoke("YandexloadLeader: _players = null");
+            //Action?.Invoke("YandexloadLeader: _players = null");
             _players = new List<LeaderboardPlayer>();
         }
         else
         {
-            Action?.Invoke("YandexloadLeader: _players != null");
+            //Action?.Invoke("YandexloadLeader: _players != null");
         }
 
         Leaderboard.GetEntries(LeaderboardName, (result) =>
         {
-            Action?.Invoke("YandexloadLeader: GetEntries");
+            //Action?.Invoke("YandexloadLeader: GetEntries");
             foreach (var entry in result.entries)
             {
                 LeaderboardPlayer leaderboardPlayer = new LeaderboardPlayer();
@@ -44,7 +44,7 @@ public class YandexLeaderboardLoading : MonoBehaviour
                 if (string.IsNullOrEmpty(name))
                     name = Anonymous;
 
-                Action?.Invoke("YandexloadLeader: foreach - player name: " + entry.player.publicName);
+                //Action?.Invoke("YandexloadLeader: foreach - player name: " + entry.player.publicName);
 
                 leaderboardPlayer.SetValue(entry.rank, name, entry.score);
                 _players.Add(leaderboardPlayer);
@@ -55,6 +55,6 @@ public class YandexLeaderboardLoading : MonoBehaviour
             }
         });
 
-        Action?.Invoke("YandexloadLeader: foreach - close. PlayerCount: " + _players.Count);
+        //Action?.Invoke("YandexloadLeader: foreach - close. PlayerCount: " + _players.Count);
     }
 }

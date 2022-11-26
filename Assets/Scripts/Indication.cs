@@ -12,20 +12,20 @@ public class Indication : MonoBehaviour
 
     private void OnEnable()
     {
-        _yandexInitialization.Action += OnAction;
-        _yandexLeaderboardLoading.Action += OnAction;
-        _yandexSavingPlayerScore.Action += OnAction;
-        _viewingLeaderboard.Action += OnAction;
-        _game.Action += OnAction;
+        //_yandexInitialization.Action += OnAction;
+        //_yandexLeaderboardLoading.Action += OnAction;
+        //_yandexSavingPlayerScore.Action += OnAction;
+        //_viewingLeaderboard.Action += OnAction;
+        //_game.Action += OnAction;
     }
 
     private void OnDisable()
     {
-        _yandexInitialization.Action -= OnAction;
-        _yandexLeaderboardLoading.Action -= OnAction;
-        _yandexSavingPlayerScore.Action -= OnAction;
-        _viewingLeaderboard.Action -= OnAction;
-        _game.Action -= OnAction;
+        //_yandexInitialization.Action -= OnAction;
+        //_yandexLeaderboardLoading.Action -= OnAction;
+        //_yandexSavingPlayerScore.Action -= OnAction;
+        //_viewingLeaderboard.Action -= OnAction;
+        //_game.Action -= OnAction;
     }
 
     private void OnAction(string text)
