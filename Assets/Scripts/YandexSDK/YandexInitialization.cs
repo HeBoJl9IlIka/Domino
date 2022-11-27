@@ -7,18 +7,22 @@ using UnityEngine.Events;
 
 public class YandexInitialization : MonoBehaviour
 {
-    //public event UnityAction<string> Action;
+    private const string LeaderboardName = "dominoLeaderboard";
+
     public event UnityAction PlayerAuthorizated;
 
     private IEnumerator Start()
     {
-        //Action?.Invoke("YandexInit start");
 #if !UNITY_WEBGL || UNITY_EDITOR
         yield break;
 #endif
-        //Action?.Invoke("YandexInit: Unity webgl = true");
+
         yield return YandexGamesSdk.Initialize(() => PlayerAccount.RequestPersonalProfileDataPermission());
-        PlayerAuthorizated?.Invoke();
-        //Action?.Invoke("YandexInit: YandexInit = true");
+
+        Leaderboard.GetPlayerEntry(LeaderboardName, (result) =>
+        {
+            if (result != null)
+                PlayerAuthorizated?.Invoke();
+        });
     }
 }

@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody))]
 public class DominoSpawning : MonoBehaviour
 {
     [SerializeField] private Transform _defaultPosition;

@@ -191,6 +191,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 5513157061831815762, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: _level
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513157061831815762, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513157061831815762, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: _playerWallet
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5513157061831815763, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -233,6 +245,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5513157061831815763, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513157061831815765, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5513157062068009345, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
@@ -283,5 +299,8 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5854439923509731714, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+    - {fileID: 5513157061831815762, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+    - {fileID: 5513157061831815765, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}

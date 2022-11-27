@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(LoadingScene))]
 public class Data : MonoBehaviour
 {
     private const string Money = "money";
@@ -22,9 +21,6 @@ public class Data : MonoBehaviour
     private void Start()
     {
         _loadingScene = GetComponent<LoadingScene>();
-        
-        //if(LastOpeningLevel != _loadingScene.CurrentScene)
-            //_loadingScene.Open(LastOpeningLevel);
     }
 
     private void OnEnable()
