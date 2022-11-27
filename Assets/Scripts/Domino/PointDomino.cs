@@ -50,6 +50,7 @@ public class PointDomino : MonoBehaviour
     public void HideDomino()
     {
         IsActive = false;
+        _boxCollider.enabled = false;
         _pointer.SetActive(false);
         _domino.SetActive(false);
     }
