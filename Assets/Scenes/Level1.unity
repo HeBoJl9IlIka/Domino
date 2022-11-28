@@ -143,6 +143,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4630759189725039922, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: _speed
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 5062715358339214900, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_IsActive
       value: 1

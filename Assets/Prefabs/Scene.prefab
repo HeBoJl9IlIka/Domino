@@ -13427,6 +13427,7 @@ GameObject:
   - component: {fileID: 8616181608505561458}
   - component: {fileID: 8560294023662788492}
   - component: {fileID: 6349664892431081836}
+  - component: {fileID: 7677688888011268948}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -13524,6 +13525,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d402ef02f409c541a5f1cbe7e969ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7677688888011268948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3993717604033794104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d312a714e7e0471468df76781ace83ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _robotSpawner: {fileID: 5513157062697286656}
 --- !u!1 &4031151597205767170
 GameObject:
   m_ObjectHideFlags: 0
@@ -14353,7 +14367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _joystick: {fileID: 4353523579921046946}
-  _speed: 400
+  _speed: 350
 --- !u!114 &4630759189725039923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32139,21 +32153,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5513157062697286656}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: YnadexSDK, Assembly-CSharp
-        m_MethodName: OnShowVideoButtonClick
+      - m_Target: {fileID: 7677688888011268948}
+        m_TargetAssemblyTypeName: YandexAds, Assembly-CSharp
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32161,7 +32163,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6579626377835428623
 GameObject:
