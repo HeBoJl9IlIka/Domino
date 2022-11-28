@@ -37,10 +37,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _rigidbody.AddForce(new Vector3(_normalizedKeybordSpeedHorizontal, 0, _normalizedKeybordSpeedVertical), ForceMode.VelocityChange);
 
-            if ((Input.GetAxis(Horizontal) != 0) && (Input.GetAxis(Vertical) != 0))
-                _speed = _cutSpeed;
-            else
-                _speed = _defaultSpeed;
+            _speed = (Input.GetAxis(Horizontal) != 0) && (Input.GetAxis(Vertical) != 0) ? _cutSpeed : _defaultSpeed;
         }
     }
 }
