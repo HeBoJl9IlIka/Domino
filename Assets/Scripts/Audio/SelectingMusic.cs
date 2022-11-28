@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnablingMusic : MonoBehaviour
+public class SelectingMusic : MonoBehaviour
 {
     private AudioSource[] _audioSources;
 

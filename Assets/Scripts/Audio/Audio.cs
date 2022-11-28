@@ -1,19 +1,20 @@
 using Agava.WebUtility;
 using UnityEngine;
 
-[RequireComponent(typeof(EnablingMusic))]
+[RequireComponent(typeof(SelectingMusic))]
 public class Audio : MonoBehaviour
 {
     private const float MaxValue = 1f;
     private const float MinValue = 0f;
 
     [SerializeField] private YandexAds _yandexAds;
+    [SerializeField] private PlayerInterface _playerInterface;
 
-    private EnablingMusic _enablingMusic;
+    private SelectingMusic _selectingMusic;
 
     private void Start()
     {
-        _enablingMusic = GetComponent<EnablingMusic>();
+        _selectingMusic = GetComponent<SelectingMusic>();
     }
 
     private void OnEnable()
@@ -38,11 +39,14 @@ public class Audio : MonoBehaviour
     
     public void EnableAudio()
     {
-        if (_enablingMusic.CurrentMusic.gameObject.activeSelf == false)
-            _enablingMusic.CurrentMusic.gameObject.SetActive(true);
+        if (_playerInterface.IsAudioEnabled)
+        {
+            if (_selectingMusic.CurrentMusic.gameObject.activeSelf == false)
+                _selectingMusic.CurrentMusic.gameObject.SetActive(true);
 
-        AudioListener.pause = false;
-        AudioListener.volume = MaxValue;
+            AudioListener.pause = false;
+            AudioListener.volume = MaxValue;
+        }
     }
 
     private void OnInBackgroundChange(bool inBackground)

@@ -8,6 +8,8 @@ public class PlayerInterface : MonoBehaviour
     [SerializeField] private TMP_Text _money;
     [SerializeField] private GameObject _iconLeaderboard;
 
+    public bool IsAudioEnabled { get; private set; }
+
     private void OnEnable()
     {
         _yandexInitialization.PlayerAuthorizated += OnPlayerAuthorizated;
@@ -28,5 +30,10 @@ public class PlayerInterface : MonoBehaviour
     private void OnPlayerAuthorizated()
     {
         _iconLeaderboard.SetActive(true);
+    }
+
+    public void EnableAudio(bool value)
+    {
+        IsAudioEnabled = value;
     }
 }
