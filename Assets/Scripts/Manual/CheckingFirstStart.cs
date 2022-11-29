@@ -15,11 +15,8 @@ public class CheckingFirstStart : MonoBehaviour
     {
         _data = GetComponent<Data>();
 
-        if (_data.IsFirstStart == false)
-        {
-            _manual.gameObject.SetActive(false);
-            _arrow.gameObject.SetActive(false);
-        }
+        _manual.gameObject.SetActive(_data.IsFirstStart);
+        _arrow.gameObject.SetActive(_data.IsFirstStart);
 
         Started?.Invoke();
     }
