@@ -1018,6 +1018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _yandexAds: {fileID: 7677688888011268948}
   _playerInterface: {fileID: 5513157062574237055}
+  _data: {fileID: 8560294023662788492}
 --- !u!1 &747669426467133467
 GameObject:
   m_ObjectHideFlags: 0
@@ -14008,6 +14009,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _level: {fileID: 5513157062307860289}
   _playerWallet: {fileID: 4630759189725039933}
+  _audio: {fileID: 8387943822566854283}
+  _playerInterface: {fileID: 5513157062574237055}
 --- !u!114 &6349664892431081836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29434,6 +29437,9 @@ MonoBehaviour:
   _playerWallet: {fileID: 4630759189725039933}
   _money: {fileID: 5513157062328781423}
   _iconLeaderboard: {fileID: 1405215601393775315}
+  _iconAudioEnabled: {fileID: 482918466671145699}
+  _iconAudioDisabled: {fileID: 2219282159889905872}
+  _data: {fileID: 8560294023662788492}
 --- !u!1 &5513157062574953724
 GameObject:
   m_ObjectHideFlags: 0
@@ -42744,7 +42750,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: v0.23
+  m_text: v0.24
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

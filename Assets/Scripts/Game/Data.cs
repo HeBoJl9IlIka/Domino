@@ -4,14 +4,18 @@ public class Data : MonoBehaviour
 {
     private const string Money = "money";
     private const string Level = "level";
+    private const string Audio = "audio";
 
     [SerializeField] private Level _level;
     [SerializeField] private PlayerWallet _playerWallet;
+    [SerializeField] private Audio _audio;
+    [SerializeField] private PlayerInterface _playerInterface;
 
     private LoadingScene _loadingScene;
 
     public int LastOpeningLevel { get; private set; }
     public int AmountMoney => PlayerPrefs.GetInt(Money);
+    public int ValueAudio => PlayerPrefs.GetInt(Audio);
 
     private void Awake()
     {
@@ -27,12 +31,14 @@ public class Data : MonoBehaviour
     {
         _playerWallet.Changed += OnChanged;
         _level.Completed += OnCompleted;
+        _audio.Changed += OnAudioChanged;
     }
 
     private void OnDisable()
     {
         _playerWallet.Changed -= OnChanged;
         _level.Completed -= OnCompleted;
+        _audio.Changed -= OnAudioChanged;
     }
 
     public void RemoveAllSave()
@@ -53,5 +59,10 @@ public class Data : MonoBehaviour
             LastOpeningLevel = 0;
 
         PlayerPrefs.SetInt(Level, LastOpeningLevel);
+    }
+
+    private void OnAudioChanged()
+    {
+        PlayerPrefs.SetInt(Audio, _playerInterface.IsAudioEnabled ? 1 : 0);
     }
 }

@@ -9,10 +9,7 @@ public class SelectingMusic : MonoBehaviour
     private void Awake()
     {
         _audioSources = GetComponentsInChildren<AudioSource>();
-    }
 
-    private void Start()
-    {
         foreach (var audioSource in _audioSources)
             audioSource.gameObject.SetActive(false);
 
