@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 public class LanguageDetection : MonoBehaviour
@@ -11,7 +10,6 @@ public class LanguageDetection : MonoBehaviour
     private const string TurkishLanguage = "Turkish";
 
     [SerializeField] private YandexInitialization _yandexInitialization;
-    [SerializeField] private TMP_Text _test;
 
     public bool IsDetected { get; private set; }
 
@@ -27,11 +25,9 @@ public class LanguageDetection : MonoBehaviour
 
     private void OnCompleted()
     {
-        string languageCode = Agava.YandexGames.YandexGamesSdk.Environment.i18n.lang;
-        _test.text = languageCode;
         string language;
 
-        switch (languageCode)
+        switch (Agava.YandexGames.YandexGamesSdk.Environment.i18n.lang)
         {
             case EnglishCode:
                 language = EnglishLanguage;
