@@ -11,6 +11,9 @@ public class LanguageDetection : MonoBehaviour
     private const string TurkishLanguage = "Turkish";
 
     [SerializeField] private YandexInitialization _yandexInitialization;
+    [SerializeField] private TMP_Text _test;
+
+    public bool IsDetected { get; private set; }
 
     private void OnEnable()
     {
@@ -24,9 +27,11 @@ public class LanguageDetection : MonoBehaviour
 
     private void OnCompleted()
     {
+        string languageCode = Agava.YandexGames.YandexGamesSdk.Environment.i18n.lang;
+        _test.text = languageCode;
         string language;
 
-        switch (Agava.YandexGames.YandexGamesSdk.Environment.i18n.lang)
+        switch (languageCode)
         {
             case EnglishCode:
                 language = EnglishLanguage;
@@ -43,5 +48,6 @@ public class LanguageDetection : MonoBehaviour
         }
 
         Lean.Localization.LeanLocalization.SetCurrentLanguageAll(language);
+        IsDetected = true;
     }
 }
