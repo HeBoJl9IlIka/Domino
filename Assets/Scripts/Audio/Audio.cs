@@ -19,7 +19,9 @@ public class Audio : MonoBehaviour
     private void Start()
     {
         _selectingMusic = GetComponent<SelectingMusic>();
-        EnableAudio();
+
+        if (_playerInterface.IsAudioEnabled)
+            EnableAudio();
     }
 
     private void OnEnable()
@@ -45,20 +47,17 @@ public class Audio : MonoBehaviour
     
     public void EnableAudio()
     {
-        if ((_playerInterface.IsAudioEnabled) || (_data.ValueAudio == 1))
-        {
-            if (_selectingMusic.CurrentMusic.gameObject.activeSelf == false)
-                _selectingMusic.CurrentMusic.gameObject.SetActive(true);
+        if (_selectingMusic.CurrentMusic.gameObject.activeSelf == false)
+            _selectingMusic.CurrentMusic.gameObject.SetActive(true);
 
-            AudioListener.pause = false;
-            AudioListener.volume = MaxValue;
-            Changed?.Invoke();
-        }
+        AudioListener.pause = false;
+        AudioListener.volume = MaxValue;
+        Changed?.Invoke();
     }
 
     private void OnInBackgroundChange(bool inBackground)
     {
-        AudioListener.pause = inBackground && _playerInterface.IsAudioEnabled == true;
-        AudioListener.volume = inBackground ? 0f : 1f;
+        AudioListener.pause = inBackground && _playerInterface.IsAudioEnabled ? false : true;
+        AudioListener.volume = inBackground ? MinValue : MaxValue;
     }
 }

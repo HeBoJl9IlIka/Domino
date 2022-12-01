@@ -17,7 +17,7 @@ public class Data : MonoBehaviour
 
     public int LastOpeningLevel { get; private set; }
     public int AmountMoney => PlayerPrefs.GetInt(Money);
-    public int ValueAudio => PlayerPrefs.GetInt(Audio);
+    public bool IsAudioEnable => PlayerPrefs.GetInt(Audio) == 0 ? true : false;
     public bool IsFirstStart => PlayerPrefs.GetInt(FirstStart) == 0 ? true : false;
 
     private void Awake()
@@ -68,7 +68,7 @@ public class Data : MonoBehaviour
 
     private void OnAudioChanged()
     {
-        PlayerPrefs.SetInt(Audio, _playerInterface.IsAudioEnabled ? 1 : 0);
+        PlayerPrefs.SetInt(Audio, _playerInterface.IsAudioEnabled ? 0 : 1);
     }
     
     private void OnStarted()

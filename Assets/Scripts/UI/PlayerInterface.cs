@@ -11,14 +11,12 @@ public class PlayerInterface : MonoBehaviour
     [SerializeField] private GameObject _iconAudioDisabled;
     [SerializeField] private Data _data;
 
-    public bool IsAudioEnabled { get; private set; }
+    public bool IsAudioEnabled => _iconAudioEnabled.gameObject.activeSelf;
 
     private void Awake()
     {
-        IsAudioEnabled = _data.ValueAudio == 1 ? true : false;
-
-        _iconAudioEnabled.gameObject.SetActive(IsAudioEnabled);
-        _iconAudioDisabled.gameObject.SetActive(IsAudioEnabled ? false : true);
+        _iconAudioEnabled.gameObject.SetActive(_data.IsAudioEnable);
+        _iconAudioDisabled.gameObject.SetActive(_data.IsAudioEnable ? false : true);
     }
 
     private void OnEnable()
@@ -41,10 +39,5 @@ public class PlayerInterface : MonoBehaviour
     private void OnPlayerAuthorizated()
     {
         _iconLeaderboard.SetActive(true);
-    }
-
-    public void EnableAudio(bool value)
-    {
-        IsAudioEnabled = value;
     }
 }
