@@ -58,7 +58,7 @@ public class Audio : MonoBehaviour
 
     private void OnInBackgroundChange(bool inBackground)
     {
-        AudioListener.pause = inBackground && _playerInterface.IsAudioEnabled == false;
+        AudioListener.pause = inBackground && _playerInterface.IsAudioEnabled == true;
         AudioListener.volume = inBackground ? 0f : 1f;
     }
 }
