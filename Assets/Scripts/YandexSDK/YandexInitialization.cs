@@ -10,6 +10,7 @@ public class YandexInitialization : MonoBehaviour
     private const string LeaderboardName = "dominoLeaderboard";
 
     public event UnityAction PlayerAuthorizated;
+    public event UnityAction Completed;
 
     private IEnumerator Start()
     {
@@ -18,6 +19,8 @@ public class YandexInitialization : MonoBehaviour
 #endif
 
         yield return YandexGamesSdk.Initialize(() => PlayerAccount.RequestPersonalProfileDataPermission());
+
+        Completed?.Invoke();
 
         Leaderboard.GetPlayerEntry(LeaderboardName, (result) =>
         {
