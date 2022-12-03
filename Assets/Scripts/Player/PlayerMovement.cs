@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private float _defaultSpeed;
 
     public bool IsMoving => _rigidbody.velocity.magnitude > 0;
+    public bool IsPressed => Input.GetAxis(Horizontal) != 0 || Input.GetAxis(Vertical) != 0 || _joystick.IsPressed;
 
     private float _normalizedJoystickSpeedHorizontal => _joystick.Horizontal * _speed * Time.deltaTime;
     private float _normalizedJoystickSpeedVertical => _joystick.Vertical * _speed * Time.deltaTime;

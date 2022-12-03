@@ -8,6 +8,8 @@ public class GettingLocalization : MonoBehaviour
     private const string Next = "Next";
     private const string LevelComplete = "Level complete";
     private const string GetRobotFree = "Get robot free";
+    private const string ControlTouch = "ControlTouch";
+    private const string ControlKeyboard = "ControlKeyboard";
     private const string Error = "Error";
 
     [SerializeField] private LanguageDetection _languageDetection;
@@ -19,7 +21,9 @@ public class GettingLocalization : MonoBehaviour
     {
         Next,
         LevelComplete,
-        GetRobotFree
+        GetRobotFree,
+        ControlTouch,
+        ControlKeyboard
     }
 
     private void Start()
@@ -43,6 +47,12 @@ public class GettingLocalization : MonoBehaviour
                     break;
                 case Text.GetRobotFree:
                     phrase = GetRobotFree;
+                    break;
+                case Text.ControlTouch:
+                    phrase = ControlTouch;
+                    break;
+                case Text.ControlKeyboard:
+                    phrase = ControlKeyboard;
                     break;
                 default:
                     phrase = Error;
