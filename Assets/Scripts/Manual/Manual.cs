@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class Manual : MonoBehaviour
 {
+
+    [SerializeField] private YandexInitialization _yandexInitialization;
     [SerializeField] private PlayerTakingOre _playerTakingOre;
     [SerializeField] private PlayerDroppingOre _playerDroppingOre;
     [SerializeField] private PlayerTakingDomino _playerTakingDomino;
@@ -25,13 +27,9 @@ public class Manual : MonoBehaviour
         _blackout.gameObject.SetActive(false);
     }
 
-    private void Start()
-    {
-        OnAction();
-    }
-
     private void OnEnable()
     {
+        _yandexInitialization.Completed += OnCompleted;
         _playerTakingOre.Taked += OnAction;
         _playerDroppingOre.Droped += OnAction;
         _playerTakingDomino.Taked += OnAction;
@@ -40,10 +38,16 @@ public class Manual : MonoBehaviour
 
     private void OnDisable()
     {
+        _yandexInitialization.Completed -= OnCompleted;
         _playerTakingOre.Taked -= OnAction;
         _playerDroppingOre.Droped -= OnAction;
         _playerTakingDomino.Taked -= OnAction;
         _playerDropDomino.Droped -= OnDroped;
+    }
+
+    private void OnCompleted()
+    {
+        OnAction();
     }
 
     private void OnAction()

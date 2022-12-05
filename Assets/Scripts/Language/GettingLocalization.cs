@@ -10,7 +10,7 @@ public class GettingLocalization : MonoBehaviour
 
     private TMP_Text _string;
 
-    private void Start()
+    private void Awake()
     {
         _string = GetComponent<TMP_Text>();
     }
