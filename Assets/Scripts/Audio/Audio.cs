@@ -28,14 +28,14 @@ public class Audio : MonoBehaviour
     {
         WebApplication.InBackgroundChangeEvent += OnInBackgroundChange;
         _yandexAds.Shows += DisableAudio;
-        _yandexAds.Showed += EnableAudio;
+        _yandexAds.Showed += OnShowed;
     }
 
     private void OnDisable()
     {
         WebApplication.InBackgroundChangeEvent -= OnInBackgroundChange;
         _yandexAds.Shows -= DisableAudio;
-        _yandexAds.Showed -= EnableAudio;
+        _yandexAds.Showed -= OnShowed;
     }
 
     public void DisableAudio()
@@ -55,9 +55,26 @@ public class Audio : MonoBehaviour
         Changed?.Invoke();
     }
 
+    private void OnShowed()
+    {
+        if (_playerInterface.IsAudioEnabled)
+            EnableAudio();
+    }
+
     private void OnInBackgroundChange(bool inBackground)
     {
-        AudioListener.pause = inBackground && _playerInterface.IsAudioEnabled ? false : true;
-        AudioListener.volume = inBackground ? MinValue : MaxValue;
+        if (inBackground)
+        {
+            AudioListener.pause = true;
+            AudioListener.volume = MinValue;
+        }
+        else
+        {
+            if (_playerInterface.IsAudioEnabled)
+            {
+                AudioListener.pause = false;
+                AudioListener.volume = MaxValue;
+            }
+        }
     }
 }

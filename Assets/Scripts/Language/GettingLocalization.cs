@@ -5,26 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(TMP_Text))]
 public class GettingLocalization : MonoBehaviour
 {
-    private const string Next = "Next";
-    private const string LevelComplete = "Level complete";
-    private const string GetRobotFree = "Get robot free";
-    private const string ControlTouch = "ControlTouch";
-    private const string ControlKeyboard = "ControlKeyboard";
-    private const string Error = "Error";
-
     [SerializeField] private LanguageDetection _languageDetection;
-    [SerializeField] private Text _phrase;
+    [SerializeField] private LeanPhrase _phrase;
 
     private TMP_Text _string;
-
-    private enum Text
-    {
-        Next,
-        LevelComplete,
-        GetRobotFree,
-        ControlTouch,
-        ControlKeyboard
-    }
 
     private void Start()
     {
@@ -35,31 +19,7 @@ public class GettingLocalization : MonoBehaviour
     {
         if (_languageDetection)
         {
-            string phrase = "";
-
-            switch (_phrase)
-            {
-                case Text.Next:
-                    phrase = Next;
-                    break;
-                case Text.LevelComplete:
-                    phrase = LevelComplete;
-                    break;
-                case Text.GetRobotFree:
-                    phrase = GetRobotFree;
-                    break;
-                case Text.ControlTouch:
-                    phrase = ControlTouch;
-                    break;
-                case Text.ControlKeyboard:
-                    phrase = ControlKeyboard;
-                    break;
-                default:
-                    phrase = Error;
-                    break;
-            }
-
-            _string.text = Lean.Localization.LeanLocalization.GetTranslationText(phrase);
+            _string.text = Lean.Localization.LeanLocalization.GetTranslationText(_phrase.name);
             enabled = false;
         }
     }
