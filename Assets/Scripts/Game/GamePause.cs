@@ -1,10 +1,11 @@
 using UnityEngine;
 
+[RequireComponent(typeof(YandexAds))]
 public class GamePause : MonoBehaviour
 {
     private YandexAds _yandexAds;
 
-    private void Start()
+    private void Awake()
     {
         _yandexAds = GetComponent<YandexAds>();
     }

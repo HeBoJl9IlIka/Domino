@@ -33,7 +33,7 @@ public class YandexAds : MonoBehaviour
         Invoke(nameof(ShowInterstitial), _delay);
     }
 
-    private void OnOpened()
+    public void OnOpened()
     {
         Shows?.Invoke();
     }
@@ -43,7 +43,7 @@ public class YandexAds : MonoBehaviour
         _robotSpawner.enabled = true;
     }
     
-    private void OnClosed()
+    public void OnClosed()
     {
         Showed?.Invoke();
     }
