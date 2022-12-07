@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class YandexAds : MonoBehaviour
 {
-    private const float _delay = 3f;
+    private const float _delay = 3.5f;
 
     [SerializeField] private RobotSpawner _robotSpawner;
     [SerializeField] private LastDomino _lastDomino;
@@ -47,9 +47,14 @@ public class YandexAds : MonoBehaviour
     {
         Showed?.Invoke();
     }
+    
+    private void OnClosed(bool onClose)
+    {
+        Showed?.Invoke();
+    }
 
     private void ShowInterstitial()
     {
-        InterstitialAd.Show();
+        InterstitialAd.Show(OnOpened, OnClosed);
     }
 }
