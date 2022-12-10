@@ -70,7 +70,7 @@ public class Audio : MonoBehaviour
         }
         else
         {
-            if (_playerInterface.IsAudioEnabled)
+            if (_playerInterface.IsAudioEnabled && _yandexAds.IsShows == false)
             {
                 AudioListener.pause = false;
                 AudioListener.volume = MaxValue;

@@ -810,6 +810,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 168
       objectReference: {fileID: 0}
+    - target: {fileID: 4174408112063282269, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4182609071385976412, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_text
       value: "\u041E\u0431\u0443\u0447\u0435\u043D\u0438\u0435"
@@ -1073,6 +1077,10 @@ PrefabInstance:
     - target: {fileID: 8312968748068459439, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578516007334706045, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9048994717117461285, guid: 730c29dce6170824c85b32ca7a4b8563, type: 3}
       propertyPath: _phrase

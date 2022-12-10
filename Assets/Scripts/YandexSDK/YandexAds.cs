@@ -4,10 +4,12 @@ using UnityEngine.Events;
 
 public class YandexAds : MonoBehaviour
 {
-    private const float _delay = 3.5f;
+    private const float _delay = 3.2f;
 
     [SerializeField] private RobotSpawner _robotSpawner;
     [SerializeField] private LastDomino _lastDomino;
+
+    public bool IsShows { get; private set; }
 
     public event UnityAction Shows;
     public event UnityAction Showed;
@@ -35,6 +37,7 @@ public class YandexAds : MonoBehaviour
 
     public void OnOpened()
     {
+        IsShows = true;
         Shows?.Invoke();
     }
     
@@ -45,11 +48,13 @@ public class YandexAds : MonoBehaviour
     
     public void OnClosed()
     {
+        IsShows = false;
         Showed?.Invoke();
     }
     
     private void OnClosed(bool onClose)
     {
+        IsShows = false;
         Showed?.Invoke();
     }
 
